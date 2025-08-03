@@ -3,10 +3,15 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
+import { useTranslations, useLocale } from "next-intl";
 import ThemeToggler from "./ThemeToggler";
+import LanguageSwitcher from "../LanguageSwitcher";
 import menuData from "./menuData";
 
 const Header = () => {
+  const t = useTranslations('Navigation');
+  const locale = useLocale();
+  
   // Navbar toggle
   const [navbarOpen, setNavbarOpen] = useState(false);
   const navbarToggleHandler = () => {
@@ -109,14 +114,14 @@ const Header = () => {
                       <li key={index} className="group relative">
                         {menuItem.path ? (
                           <Link
-                            href={menuItem.path}
+                            href={`/${locale}${menuItem.path}`}
                             className={`flex py-2 text-base lg:mr-0 lg:inline-flex lg:px-0 lg:py-6 ${
-                              usePathName === menuItem.path
+                              usePathName === `/${locale}${menuItem.path}`
                                 ? "text-primary dark:text-white"
                                 : "text-dark hover:text-primary dark:text-white/70 dark:hover:text-white"
                             }`}
                           >
-                            {menuItem.title}
+                            {menuItem.titleKey ? t(menuItem.titleKey.split('.')[1]) : menuItem.title}
                           </Link>
                         ) : (
                           <>
@@ -124,7 +129,7 @@ const Header = () => {
                               onClick={() => handleSubmenu(index)}
                               className="text-dark group-hover:text-primary flex cursor-pointer items-center justify-between py-2 text-base lg:mr-0 lg:inline-flex lg:px-0 lg:py-6 dark:text-white/70 dark:group-hover:text-white"
                             >
-                              {menuItem.title}
+                              {menuItem.titleKey ? t(menuItem.titleKey.split('.')[1]) : menuItem.title}
                               <span className="pl-3">
                                 <svg width="25" height="24" viewBox="0 0 25 24">
                                   <path
@@ -141,13 +146,13 @@ const Header = () => {
                                 openIndex === index ? "block" : "hidden"
                               }`}
                             >
-                              {menuItem.submenu.map((submenuItem, index) => (
+                              {menuItem.submenu?.map((submenuItem, index) => (
                                 <Link
-                                  href={submenuItem.path}
+                                  href={`/${locale}${submenuItem.path}`}
                                   key={index}
                                   className="text-dark hover:text-primary block rounded-sm py-2.5 text-sm lg:px-3 dark:text-white/70 dark:hover:text-white"
                                 >
-                                  {submenuItem.title}
+                                  {submenuItem.titleKey ? t(submenuItem.titleKey.split('.')[1]) : submenuItem.title}
                                 </Link>
                               ))}
                             </div>
@@ -159,21 +164,18 @@ const Header = () => {
                 </nav>
               </div>
               <div className="flex items-center justify-end pr-16 lg:pr-0">
+                <div>
+                  <ThemeToggler />
+                </div>
+                <div className="ml-3">
+                  <LanguageSwitcher />
+                </div>
                 <Link
-                  href="/contact"
-                  className="text-dark hidden px-7 py-3 text-base font-medium hover:opacity-70 md:block dark:text-white"
-                >
-                  Contact Us
-                </Link>
-                <Link
-                  href="/contact"
+                  href={`/${locale}/contact`}
                   className="ease-in-up shadow-btn hover:shadow-btn-hover bg-primary hover:bg-primary/90 hidden rounded-xs px-8 py-3 text-base font-medium text-white transition duration-300 md:block md:px-9 lg:px-6 xl:px-9"
                 >
                   Request Demo
                 </Link>
-                <div>
-                  <ThemeToggler />
-                </div>
               </div>
             </div>
           </div>

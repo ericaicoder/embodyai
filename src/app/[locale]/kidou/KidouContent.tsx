@@ -1,31 +1,16 @@
+"use client";
 import Breadcrumb from "@/components/Common/Breadcrumb";
-import { Metadata } from "next";
-import Image from "next/image";
+import { useTranslations, useLocale } from "next-intl";
 
-export const metadata: Metadata = {
-  title: "Kidou - Multi-Session Claude Code GUI | EmbodyAI",
-  description: "Kidou is EmbodyAI's revolutionary Claude code GUI app that lets developers manage multiple AI coding sessions simultaneously. Vibe code with parallel AI assistants and scale your productivity to 10X levels.",
-  keywords: "Kidou, Claude code GUI, multi-session coding, AI coding app, parallel AI sessions, developer productivity, vibe coding, AI code management",
-  openGraph: {
-    title: "Kidou - Multi-Session Claude Code GUI | EmbodyAI",
-    description: "Revolutionary Claude code GUI app for managing multiple AI coding sessions. Vibe code with parallel AI assistants and scale your productivity to 10X levels.",
-    url: "https://embodyai.co.jp/kidou",
-    siteName: "EmbodyAI",
-    type: "website"
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Kidou - Multi-Session Claude Code GUI | EmbodyAI",
-    description: "Revolutionary Claude code GUI app for managing multiple AI coding sessions and scaling developer productivity."
-  }
-};
+const KidouContent = () => {
+  const t = useTranslations('Kidou');
+  const locale = useLocale();
 
-const KidouPage = () => {
   return (
     <>
       <Breadcrumb
         pageName="Kidou"
-        description="Meet Kidou - the revolutionary Claude code GUI app that transforms how developers interact with AI. Manage multiple coding sessions, vibe code with parallel AI assistants, and scale your development workflow to unprecedented levels."
+        description={t('description')}
       />
 
       {/* Hero Section */}
@@ -36,23 +21,23 @@ const KidouPage = () => {
               <div className="w-full px-4 lg:w-1/2">
                 <div className="mb-12 max-w-[570px] lg:mb-0">
                   <h1 className="mb-5 text-3xl font-bold leading-tight text-black dark:text-white sm:text-4xl sm:leading-tight md:text-5xl md:leading-tight">
-                    Kidou: Multi-Session AI Coding Unleashed
+                    {t('title')}
                   </h1>
                   <p className="mb-8 text-base leading-relaxed text-body-color dark:text-body-color-dark sm:text-lg md:text-xl">
-                    Experience the future of AI-assisted development with Kidou, EmbodyAI&apos;s revolutionary Claude code GUI app. Manage multiple AI coding sessions simultaneously, collaborate with parallel AI assistants, and enter the flow state of &ldquo;vibe coding.&rdquo;
+                    {t('description')}
                   </p>
                   <div className="flex flex-col items-start justify-start space-y-4 sm:flex-row sm:space-x-4 sm:space-y-0">
                     <a
                       href="#features"
                       className="rounded-xs bg-primary px-8 py-4 text-base font-semibold text-white duration-300 ease-in-out hover:bg-primary/80"
                     >
-                      Explore Features
+                      {t('exploreFeatures')}
                     </a>
                     <a
-                      href="/contact"
+                      href={`/${locale}/contact`}
                       className="inline-block rounded-xs bg-black px-8 py-4 text-base font-semibold text-white duration-300 ease-in-out hover:bg-black/90 dark:bg-white/10 dark:text-white dark:hover:bg-white/5"
                     >
-                      Get Early Access
+                      {t('getEarlyAccess')}
                     </a>
                   </div>
                 </div>
@@ -85,10 +70,10 @@ const KidouPage = () => {
         <div className="container">
           <div className="mx-auto mb-12 max-w-[510px] text-center lg:mb-16">
             <h2 className="mb-4 text-3xl font-bold leading-tight text-black dark:text-white sm:text-4xl sm:leading-tight">
-              What is Kidou?
+              {t('whatIsKidou.title')}
             </h2>
             <p className="text-base leading-relaxed text-body-color dark:text-body-color-dark">
-              Kidou (起動 - &ldquo;startup&rdquo; in Japanese) is the next evolution in AI-assisted development, designed for developers who want to harness the full power of Claude across multiple concurrent sessions.
+              {t('whatIsKidou.description')}
             </p>
           </div>
 
@@ -143,10 +128,10 @@ const KidouPage = () => {
         <div className="container">
           <div className="mx-auto mb-12 max-w-[510px] text-center lg:mb-16">
             <h2 className="mb-4 text-3xl font-bold leading-tight text-black dark:text-white sm:text-4xl sm:leading-tight">
-              Kidou Capabilities
+              {t('capabilities.title')}
             </h2>
             <p className="text-base leading-relaxed text-body-color dark:text-body-color-dark">
-              Unlock the full potential of AI-assisted development with these powerful features designed for modern developers.
+              {t('capabilities.description')}
             </p>
           </div>
 
@@ -221,33 +206,33 @@ const KidouPage = () => {
             <div className="w-full px-4 lg:w-1/2">
               <div className="mb-12 max-w-[570px] lg:mb-0">
                 <h2 className="mb-8 text-3xl font-bold leading-tight text-black dark:text-white sm:text-4xl sm:leading-tight">
-                  Why Developers Choose Kidou
+                  {t('whyKidou.title')}
                 </h2>
                 
                 <div className="mb-8">
                   <h3 className="mb-4 text-xl font-bold text-black dark:text-white">
-                    🔥 Enter the Vibe Coding Zone
+                    {t('whyKidou.vibeCooding.title')}
                   </h3>
                   <p className="text-base leading-relaxed text-body-color dark:text-body-color-dark">
-                    Experience a new way of coding where AI feels like a natural extension of your mind. Kidou&apos;s intuitive interface eliminates friction between thought and code, keeping you in the flow state longer.
+                    {t('whyKidou.vibeCooding.description')}
                   </p>
                 </div>
 
                 <div className="mb-8">
                   <h3 className="mb-4 text-xl font-bold text-black dark:text-white">
-                    ⚡ 10X Your Development Speed
+                    {t('whyKidou.tenxSpeed.title')}
                   </h3>
                   <p className="text-base leading-relaxed text-body-color dark:text-body-color-dark">
-                    By managing multiple specialized AI sessions, you can work on different aspects of your project simultaneously, dramatically reducing development time and increasing output quality.
+                    {t('whyKidou.tenxSpeed.description')}
                   </p>
                 </div>
 
                 <div className="mb-8">
                   <h3 className="mb-4 text-xl font-bold text-black dark:text-white">
-                    🧠 Cognitive Load Reduction
+                    {t('whyKidou.cognitiveReduction.title')}
                   </h3>
                   <p className="text-base leading-relaxed text-body-color dark:text-body-color-dark">
-                    Let each AI session handle specific domains of knowledge while you focus on high-level architecture and creative problem-solving. Your brain stays fresh for the tasks that matter most.
+                    {t('whyKidou.cognitiveReduction.description')}
                   </p>
                 </div>
               </div>
@@ -276,23 +261,23 @@ const KidouPage = () => {
         <div className="container">
           <div className="mx-auto max-w-[570px] text-center">
             <h2 className="mb-4 text-3xl font-bold leading-tight text-white sm:text-4xl sm:leading-tight">
-              Ready to Experience Kidou?
+              {t('cta.title')}
             </h2>
             <p className="mb-8 text-base leading-relaxed text-white/90">
-              Join the early access program and be among the first developers to experience the future of multi-session AI coding with Kidou.
+              {t('cta.description')}
             </p>
             <div className="flex flex-col items-center justify-center space-y-4 sm:flex-row sm:space-x-4 sm:space-y-0">
               <a
-                href="/contact"
+                href={`/${locale}/contact`}
                 className="rounded-xs bg-white px-8 py-4 text-base font-semibold text-primary duration-300 ease-in-out hover:bg-white/90"
               >
-                Request Early Access
+                {t('cta.requestEarlyAccess')}
               </a>
               <a
-                href="/contact"
+                href={`/${locale}/contact`}
                 className="rounded-xs border border-white px-8 py-4 text-base font-semibold text-white duration-300 ease-in-out hover:bg-white hover:text-primary"
               >
-                Schedule Demo
+                {t('cta.scheduleDemo')}
               </a>
             </div>
           </div>
@@ -302,4 +287,4 @@ const KidouPage = () => {
   );
 };
 
-export default KidouPage; 
+export default KidouContent; 

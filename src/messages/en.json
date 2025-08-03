@@ -1,0 +1,149 @@
+{
+  "Common": {
+    "companyName": "EmbodyAI",
+    "tagline": "Scale Your Development Team to 10X with AI",
+    "readMore": "Read More",
+    "getStarted": "Get Started",
+    "learnMore": "Learn More",
+    "contact": "Contact",
+    "about": "About",
+    "home": "Home",
+    "products": "Products"
+  },
+  "Navigation": {
+    "home": "Home",
+    "products": "Products",
+    "about": "About",
+    "contact": "Contact",
+    "kidou": "Kidou"
+  },
+  "Hero": {
+    "title": "Scale Your Development Team to 10X with AI",
+    "description": "EmbodyAI revolutionizes software development by empowering developers with cutting-edge AI tools. Our platform accelerates coding, automates repetitive tasks, and amplifies developer productivity by 10X, transforming how teams build, deploy, and scale software solutions.",
+    "startBuilding": "Start Building 10X Faster",
+    "seeHowItWorks": "See How It Works"
+  },
+  "Features": {
+    "title": "Main Features",
+    "description": "There are many variations of passages of Lorem Ipsum available but the majority have suffered alteration in some form.",
+    "aiDeveloperAgent": {
+      "title": "AI Developer Agent",
+      "description": "Your intelligent coding companion that understands context, writes production-ready code, and learns your coding style. Scale your development velocity by 10X with an AI agent that acts as your senior developer pair."
+    },
+    "automateWorkflow": {
+      "title": "Automate Workflow",
+      "description": "Eliminate repetitive development tasks with intelligent workflow automation. From code generation to testing and deployment, automate your entire development pipeline and focus on creative problem-solving."
+    },
+    "asyncCodingAgent": {
+      "title": "Async Coding Agent",
+      "description": "Deploy AI coding agents that work asynchronously on your tasks while you sleep. Wake up to completed features, refactored code, and optimized solutions - truly enabling 24/7 development cycles."
+    },
+    "codingPromptSharing": {
+      "title": "Coding Prompt Sharing",
+      "description": "Access and share a vast library of proven AI coding prompts with your team. Build a knowledge base of effective prompts for common development tasks and accelerate your team's AI-assisted coding proficiency."
+    },
+    "aiTaskManagement": {
+      "title": "AI Task Management",
+      "description": "Intelligent project management that understands your codebase, automatically prioritizes tasks, estimates effort, and assigns work to team members or AI agents. Transform chaos into organized, efficient development cycles."
+    },
+    "localAiRunner": {
+      "title": "Local AI Runner",
+      "description": "Run powerful AI models directly on your machine for maximum privacy and performance. No data leaves your environment while still accessing enterprise-grade AI capabilities for code generation, analysis, and optimization."
+    }
+  },
+  "About": {
+    "sectionOne": {
+      "title": "Scale Every Developer to 10X with AI-Powered Tools",
+      "description": "EmbodyAI revolutionizes software development by empowering developers with cutting-edge AI agents and automation tools. Our platform transforms coding workflows, eliminates repetitive tasks, and amplifies developer productivity by 10X, making every developer feel like a superhuman coder.",
+      "features": {
+        "aiDeveloperAgents": "AI Developer Agents",
+        "asyncCodingAutomation": "Async Coding Automation",
+        "localAiRunner": "Local AI Runner",
+        "intelligentWorkflowAutomation": "Intelligent Workflow Automation",
+        "aiTaskManagement": "AI Task Management",
+        "privacyFirstArchitecture": "Privacy-First Architecture"
+      }
+    },
+    "sectionTwo": {
+      "aiPoweredCodeGeneration": {
+        "title": "AI-Powered Code Generation",
+        "description": "Generate production-ready code 10X faster with our intelligent AI agents that understand your project context, coding style, and requirements. From complex algorithms to boilerplate code, our AI writes it all."
+      },
+      "asyncDevelopment": {
+        "title": "24/7 Async Development",
+        "description": "Deploy AI coding agents that work while you sleep. Wake up to completed features, refactored code, and optimized solutions. True continuous development that never stops."
+      },
+      "privacyFirstLocalAi": {
+        "title": "Privacy-First Local AI",
+        "description": "Run powerful AI models directly on your machine for maximum privacy and performance. Your code never leaves your environment while accessing enterprise-grade AI capabilities."
+      }
+    }
+  },
+  "Contact": {
+    "title": "Ready to Scale Your Development to 10X?",
+    "description": "Get in touch with our team to learn how EmbodyAI can accelerate your development workflow and amplify your productivity.",
+    "form": {
+      "name": "Your Name",
+      "email": "Your Email",
+      "message": "Your Message",
+      "messagePlaceholder": "Tell us about your development challenges and how we can help you scale to 10X productivity...",
+      "sendMessage": "Send Message",
+      "sending": "Sending...",
+      "success": "Thank you! Your message has been sent successfully. Our team will get back to you soon.",
+      "errorRequired": "Please fill in all fields",
+      "errorInvalidEmail": "Please enter a valid email address",
+      "errorNetwork": "Network error. Please check your connection and try again."
+    }
+  },
+  "Footer": {
+    "description": "EmbodyAI revolutionizes software development by empowering developers with cutting-edge AI agents and automation tools. Scale your development team to 10X productivity and transform every developer into a superhuman coder.",
+    "company": "Company",
+    "aboutUs": "About Us",
+    "contact": "Contact",
+    "aiTools": "AI Tools",
+    "developerResources": "Developer Resources",
+    "developerSupport": "Developer Support",
+    "copyright": "© 2025 EmbodyAI. All rights reserved.",
+    "privacyPolicy": "Privacy Policy",
+    "termsOfService": "Terms of Service"
+  },
+  "Kidou": {
+    "title": "Kidou: Multi-Session AI Coding Unleashed",
+    "description": "Experience the future of AI-assisted development with Kidou, EmbodyAI's revolutionary Claude code GUI app. Manage multiple AI coding sessions simultaneously, collaborate with parallel AI assistants, and enter the flow state of \"vibe coding.\"",
+    "exploreFeatures": "Explore Features",
+    "getEarlyAccess": "Get Early Access",
+    "whatIsKidou": {
+      "title": "What is Kidou?",
+      "description": "Kidou (起動 - \"startup\" in Japanese) is the next evolution in AI-assisted development, designed for developers who want to harness the full power of Claude across multiple concurrent sessions."
+    },
+    "capabilities": {
+      "title": "Kidou Capabilities",
+      "description": "Unlock the full potential of AI-assisted development with these powerful features designed for modern developers."
+    },
+    "whyKidou": {
+      "title": "Why Developers Choose Kidou",
+      "vibeCooding": {
+        "title": "🔥 Enter the Vibe Coding Zone",
+        "description": "Experience a new way of coding where AI feels like a natural extension of your mind. Kidou's intuitive interface eliminates friction between thought and code, keeping you in the flow state longer."
+      },
+      "tenxSpeed": {
+        "title": "⚡ 10X Your Development Speed",
+        "description": "By managing multiple specialized AI sessions, you can work on different aspects of your project simultaneously, dramatically reducing development time and increasing output quality."
+      },
+      "cognitiveReduction": {
+        "title": "🧠 Cognitive Load Reduction",
+        "description": "Let each AI session handle specific domains of knowledge while you focus on high-level architecture and creative problem-solving. Your brain stays fresh for the tasks that matter most."
+      }
+    },
+    "cta": {
+      "title": "Ready to Experience Kidou?",
+      "description": "Join the early access program and be among the first developers to experience the future of multi-session AI coding with Kidou.",
+      "requestEarlyAccess": "Request Early Access",
+      "scheduleDemo": "Schedule Demo"
+    }
+  },
+  "LanguageSwitcher": {
+    "english": "English",
+    "japanese": "日本語"
+  }
+} 

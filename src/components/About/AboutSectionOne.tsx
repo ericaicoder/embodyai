@@ -1,4 +1,6 @@
+"use client";
 import Image from "next/image";
+import { useTranslations } from "next-intl";
 import SectionTitle from "../Common/SectionTitle";
 
 const checkIcon = (
@@ -8,9 +10,11 @@ const checkIcon = (
 );
 
 const AboutSectionOne = () => {
-  const List = ({ text }) => (
-    <p className="text-body-color mb-5 flex items-center text-lg font-medium">
-      <span className="bg-primary/10 text-primary mr-4 flex h-[30px] w-[30px] items-center justify-center rounded-md">
+  const t = useTranslations('About.sectionOne');
+
+  const List = ({ text }: { text: string }) => (
+    <p className="mb-5 flex items-center text-lg font-medium text-body-color">
+      <span className="mr-4 flex h-[30px] w-[30px] items-center justify-center rounded-md bg-primary bg-opacity-10 text-primary">
         {checkIcon}
       </span>
       {text}
@@ -24,8 +28,8 @@ const AboutSectionOne = () => {
           <div className="-mx-4 flex flex-wrap items-center">
             <div className="w-full px-4 lg:w-1/2">
               <SectionTitle
-                title="Scale Every Developer to 10X with AI-Powered Tools"
-                paragraph="EmbodyAI revolutionizes software development by empowering developers with cutting-edge AI agents and automation tools. Our platform transforms coding workflows, eliminates repetitive tasks, and amplifies developer productivity by 10X, making every developer feel like a superhuman coder."
+                title={t('title')}
+                paragraph={t('description')}
                 mb="44px"
               />
 
@@ -35,31 +39,31 @@ const AboutSectionOne = () => {
               >
                 <div className="mx-[-12px] flex flex-wrap">
                   <div className="w-full px-3 sm:w-1/2 lg:w-full xl:w-1/2">
-                    <List text="AI Developer Agents" />
-                    <List text="Async Coding Automation" />
-                    <List text="Local AI Runner" />
+                    <List text={t('features.aiDeveloperAgents')} />
+                    <List text={t('features.asyncCodingAutomation')} />
+                    <List text={t('features.localAiRunner')} />
                   </div>
 
                   <div className="w-full px-3 sm:w-1/2 lg:w-full xl:w-1/2">
-                    <List text="Intelligent Workflow Automation" />
-                    <List text="AI Task Management" />
-                    <List text="Privacy-First Architecture" />
+                    <List text={t('features.intelligentWorkflowAutomation')} />
+                    <List text={t('features.aiTaskManagement')} />
+                    <List text={t('features.privacyFirstArchitecture')} />
                   </div>
                 </div>
               </div>
             </div>
 
             <div className="w-full px-4 lg:w-1/2">
-              <div className="relative mx-auto aspect-25/24 max-w-[500px] lg:mr-0">
+              <div className="relative mx-auto aspect-[25/24] max-w-[500px] lg:mr-0">
                 <Image
                   src="/images/about/about-image.svg"
-                  alt="EmbodyAI Platform Visualization"
+                  alt="about-image"
                   fill
                   className="mx-auto max-w-full drop-shadow-three dark:hidden dark:drop-shadow-none lg:mr-0"
                 />
                 <Image
                   src="/images/about/about-image-dark.svg"
-                  alt="EmbodyAI Platform Visualization"
+                  alt="about-image"
                   fill
                   className="mx-auto hidden max-w-full drop-shadow-three dark:block dark:drop-shadow-none lg:mr-0"
                 />

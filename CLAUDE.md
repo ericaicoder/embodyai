@@ -28,12 +28,6 @@ This repository contains the **official company homepage** for EmbodyAI. The web
 - **Deployment Automation**: AI-optimized CI/CD pipelines and workflows
 - **Developer Mentoring**: AI coaching to accelerate skill development
 
-### 10X Developer Productivity
-- **Eliminate Repetitive Tasks**: Automate boilerplate, configuration, and routine coding
-- **Accelerate Learning**: AI-powered skill development and knowledge transfer
-- **Reduce Context Switching**: Keep developers in flow state with intelligent assistance
-- **Scale Team Output**: Small teams achieving what traditionally requires 10X more developers
-
 ## Technical Stack & Architecture
 
 ### Core Technologies
@@ -43,6 +37,7 @@ This repository contains the **official company homepage** for EmbodyAI. The web
 - **Theme**: next-themes for dark/light mode support (essential for developer audience)
 - **Build Tool**: PNPM for package management
 - **Code Quality**: ESLint + Prettier with Tailwind plugin
+- **I18N**: next-intl
 
 ### Project Structure
 ```
@@ -50,7 +45,9 @@ src/
 ├── app/           # Next.js App Router pages and layouts
 ├── components/    # Reusable React components (developer-focused UI)
 ├── types/         # TypeScript type definitions
+├── messages/      # i18n messages
 └── styles/        # Global styles and Tailwind configuration
+
 ```
 
 ## Development Guidelines for AI Assistants

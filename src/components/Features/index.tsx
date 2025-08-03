@@ -1,15 +1,19 @@
+"use client";
+import { useTranslations } from "next-intl";
 import SectionTitle from "../Common/SectionTitle";
 import SingleFeature from "./SingleFeature";
 import featuresData from "./featuresData";
 
 const Features = () => {
+  const t = useTranslations('Features');
+
   return (
     <>
-      <section id="features" className="py-16 md:py-20 lg:py-28">
+      <section id="features" className="bg-primary/[.03] py-16 md:py-20 lg:py-28">
         <div className="container">
           <SectionTitle
-            title="Powerful AI Solutions"
-            paragraph="Discover our comprehensive suite of artificial intelligence tools and services designed to accelerate your business transformation and unlock new possibilities."
+            title={t('title')}
+            paragraph={t('description')}
             center
           />
 

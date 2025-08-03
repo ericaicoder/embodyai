@@ -1,0 +1,149 @@
+{
+  "Common": {
+    "companyName": "EmbodyAI",
+    "tagline": "AIで開発チームを10倍にスケール",
+    "readMore": "詳細を読む",
+    "getStarted": "今すぐ始める",
+    "learnMore": "詳しく見る",
+    "contact": "お問い合わせ",
+    "about": "会社概要",
+    "home": "ホーム",
+    "products": "プロダクト"
+  },
+  "Navigation": {
+    "home": "ホーム",
+    "products": "プロダクト",
+    "about": "会社概要",
+    "contact": "お問い合わせ",
+    "kidou": "Kidou"
+  },
+  "Hero": {
+    "title": "AIで開発チームを10倍にスケール",
+    "description": "EmbodyAIは最先端のAIツールで開発者をエンパワーし、ソフトウェア開発を革命化します。コーディングを加速し、反復的なタスクを自動化し、開発者の生産性を10倍に増幅させ、チームがソフトウェアソリューションを構築、デプロイ、スケールする方法を変革します。",
+    "startBuilding": "10倍高速な開発を始める",
+    "seeHowItWorks": "仕組みを見る"
+  },
+  "Features": {
+    "title": "主な機能",
+    "description": "Lorem Ipsumには多くのバリエーションがありますが、その大部分は何らかの形で変更を受けています。",
+    "aiDeveloperAgent": {
+      "title": "AI開発エージェント",
+      "description": "コンテキストを理解し、本番対応のコードを書き、あなたのコーディングスタイルを学習するインテリジェントなコーディングパートナー。シニア開発者ペアとして機能するAIエージェントで開発速度を10倍にスケールアップ。"
+    },
+    "automateWorkflow": {
+      "title": "ワークフローの自動化",
+      "description": "インテリジェントなワークフロー自動化で反復的な開発タスクを排除。コード生成からテスト、デプロイメントまで、開発パイプライン全体を自動化し、創造的な問題解決に集中。"
+    },
+    "asyncCodingAgent": {
+      "title": "非同期コーディングエージェント",
+      "description": "睡眠中にタスクを非同期で処理するAIコーディングエージェントを配置。完成した機能、リファクタリングされたコード、最適化されたソリューションを朝起きて確認 - 真の24時間開発サイクルを実現。"
+    },
+    "codingPromptSharing": {
+      "title": "コーディングプロンプト共有",
+      "description": "チームと実証済みのAIコーディングプロンプトの膨大なライブラリにアクセスし、共有。一般的な開発タスク用の効果的なプロンプトの知識ベースを構築し、チームのAI支援コーディング習熟度を加速。"
+    },
+    "aiTaskManagement": {
+      "title": "AIタスク管理",
+      "description": "コードベースを理解し、自動的にタスクを優先順位付けし、工数を見積もり、チームメンバーやAIエージェントに作業を割り当てるインテリジェントなプロジェクト管理。カオスを整理された効率的な開発サイクルに変換。"
+    },
+    "localAiRunner": {
+      "title": "ローカルAIランナー",
+      "description": "最大限のプライバシーとパフォーマンスのために、強力なAIモデルをマシン上で直接実行。データが環境を離れることなく、コード生成、分析、最適化のためのエンタープライズグレードのAI機能にアクセス。"
+    }
+  },
+  "About": {
+    "sectionOne": {
+      "title": "AI駆動ツールで全開発者を10倍にスケール",
+      "description": "EmbodyAIは最先端のAIエージェントと自動化ツールで開発者をエンパワーし、ソフトウェア開発を革命化します。私たちのプラットフォームはコーディングワークフローを変革し、反復的なタスクを排除し、開発者の生産性を10倍に増幅させ、すべての開発者をスーパーヒューマンコーダーのような気分にさせます。",
+      "features": {
+        "aiDeveloperAgents": "AI開発エージェント",
+        "asyncCodingAutomation": "非同期コーディング自動化",
+        "localAiRunner": "ローカルAIランナー",
+        "intelligentWorkflowAutomation": "インテリジェントワークフロー自動化",
+        "aiTaskManagement": "AIタスク管理",
+        "privacyFirstArchitecture": "プライバシーファーストアーキテクチャ"
+      }
+    },
+    "sectionTwo": {
+      "aiPoweredCodeGeneration": {
+        "title": "AI駆動コード生成",
+        "description": "プロジェクトのコンテキスト、コーディングスタイル、要件を理解するインテリジェントなAIエージェントで本番対応のコードを10倍高速で生成。複雑なアルゴリズムからボイラープレートコードまで、私たちのAIがすべてを書きます。"
+      },
+      "asyncDevelopment": {
+        "title": "24時間非同期開発",
+        "description": "睡眠中に動作するAIコーディングエージェントを配置。完成した機能、リファクタリングされたコード、最適化されたソリューションを朝起きて確認。決して止まらない真の継続的開発。"
+      },
+      "privacyFirstLocalAi": {
+        "title": "プライバシーファーストローカルAI",
+        "description": "最大限のプライバシーとパフォーマンスのために、強力なAIモデルをマシン上で直接実行。エンタープライズグレードのAI機能にアクセスしながら、コードが環境を離れることはありません。"
+      }
+    }
+  },
+  "Contact": {
+    "title": "開発を10倍にスケールする準備はできましたか？",
+    "description": "EmbodyAIが開発ワークフローを加速し、生産性を増幅する方法について、私たちのチームにお問い合わせください。",
+    "form": {
+      "name": "お名前",
+      "email": "メールアドレス",
+      "message": "メッセージ",
+      "messagePlaceholder": "開発の課題と、10倍の生産性向上をどのようにサポートできるかをお聞かせください...",
+      "sendMessage": "メッセージを送信",
+      "sending": "送信中...",
+      "success": "ありがとうございます！メッセージが正常に送信されました。チームよりまもなくご連絡いたします。",
+      "errorRequired": "すべてのフィールドを入力してください",
+      "errorInvalidEmail": "有効なメールアドレスを入力してください",
+      "errorNetwork": "ネットワークエラー。接続を確認してもう一度お試しください。"
+    }
+  },
+  "Footer": {
+    "description": "EmbodyAIは最先端のAIエージェントと自動化ツールで開発者をエンパワーし、ソフトウェア開発を革命化します。開発チームを10倍の生産性にスケールし、すべての開発者をスーパーヒューマンコーダーに変身させます。",
+    "company": "会社",
+    "aboutUs": "会社概要",
+    "contact": "お問い合わせ",
+    "aiTools": "AIツール",
+    "developerResources": "開発者リソース",
+    "developerSupport": "開発者サポート",
+    "copyright": "© 2025 EmbodyAI. All rights reserved.",
+    "privacyPolicy": "プライバシーポリシー",
+    "termsOfService": "利用規約"
+  },
+  "Kidou": {
+    "title": "Kidou: マルチセッションAIコーディングの解放",
+    "description": "EmbodyAIの革命的なClaude code GUIアプリKidouで、AI支援開発の未来を体験してください。複数のAIコーディングセッションを同時に管理し、並列AIアシスタントと協力し、「バイブコーディング」のフロー状態に入ります。",
+    "exploreFeatures": "機能を探索",
+    "getEarlyAccess": "早期アクセスを取得",
+    "whatIsKidou": {
+      "title": "Kidouとは？",
+      "description": "Kidou（起動 - 日本語で「startup」）は、複数の並行セッションでClaudeの全力を活用したい開発者向けに設計された、AI支援開発の次の進化です。"
+    },
+    "capabilities": {
+      "title": "Kidouの機能",
+      "description": "現代の開発者向けに設計されたこれらの強力な機能でAI支援開発の可能性を最大限に引き出します。"
+    },
+    "whyKidou": {
+      "title": "開発者がKidouを選ぶ理由",
+      "vibeCooding": {
+        "title": "🔥 バイブコーディングゾーンに入る",
+        "description": "AIが心の自然な延長のように感じられる新しいコーディング方法を体験。Kidouの直感的なインターフェースは思考とコードの間の摩擦を排除し、フロー状態をより長く保ちます。"
+      },
+      "tenxSpeed": {
+        "title": "⚡ 開発速度を10倍に",
+        "description": "複数の専門AIセッションを管理することで、プロジェクトの異なる側面を同時に作業でき、開発時間を劇的に短縮し、出力品質を向上させます。"
+      },
+      "cognitiveReduction": {
+        "title": "🧠 認知負荷の軽減",
+        "description": "各AIセッションに特定の知識ドメインを処理させ、高レベルのアーキテクチャと創造的な問題解決に集中。最も重要なタスクのために脳を新鮮に保ちます。"
+      }
+    },
+    "cta": {
+      "title": "Kidouを体験する準備はできましたか？",
+      "description": "早期アクセスプログラムに参加し、KidouでマルチセッションAIコーディングの未来を体験する最初の開発者の一人になりましょう。",
+      "requestEarlyAccess": "早期アクセスをリクエスト",
+      "scheduleDemo": "デモをスケジュール"
+    }
+  },
+  "LanguageSwitcher": {
+    "english": "English",
+    "japanese": "日本語"
+  }
+} 

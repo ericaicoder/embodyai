@@ -15,7 +15,8 @@
     "products": "プロダクト",
     "about": "会社概要",
     "contact": "お問い合わせ",
-    "kidou": "Kidou"
+    "kidou": "Kidou",
+    "requestDemo": "デモをリクエスト"
   },
   "Hero": {
     "title": "AIで開発チームを10倍にスケール",
@@ -145,5 +146,12 @@
   "LanguageSwitcher": {
     "english": "English",
     "japanese": "日本語"
+  },
+  "Breadcrumb": {
+    "home": "ホーム",
+    "aboutTitle": "EmbodyAIについて",
+    "aboutDescription": "2025年に設立されたEmbodyAIが、最先端のAIエージェントと自動化ツールで開発者をエンパワーし、ソフトウェア開発をどのように革命化しているかをご覧ください。コーディングワークフローを変革し、開発者の生産性を10倍にスケールします。",
+    "contactTitle": "EmbodyAIへのお問い合わせ",
+    "contactDescription": "AIで開発ワークフローを変革する準備はできましたか？私たちのチームにお問い合わせいただき、EmbodyAIがコーディング生産性を10倍にスケールし、ソフトウェア開発プロセスを加速する方法をご発見ください。"
   }
 } 

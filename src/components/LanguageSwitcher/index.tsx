@@ -1,22 +1,35 @@
 'use client';
 
 import { useLocale } from 'next-intl';
-import { useRouter, usePathname } from 'next/navigation';
+import { usePathname } from 'next/navigation';
+import Link from 'next/link';
 import { locales, type Locale } from '@/i18n/config';
 import { useState } from 'react';
 
 const LanguageSwitcher = () => {
   const locale = useLocale() as Locale;
-  const router = useRouter();
   const pathname = usePathname();
   const [isOpen, setIsOpen] = useState(false);
 
-  const switchLanguage = (newLocale: Locale) => {
-    // Remove the current locale from pathname and add the new one
-    const pathWithoutLocale = pathname.replace(`/${locale}`, '') || '/';
-    const newPath = `/${newLocale}${pathWithoutLocale}`;
-    router.push(newPath);
-    setIsOpen(false);
+  const getLocalizedPath = (newLocale: Locale): string => {
+    // More robust path construction
+    const pathSegments = pathname.split('/');
+    const isCurrentLocaleInPath = locales.includes(pathSegments[1] as Locale);
+    
+    let pathWithoutLocale: string;
+    if (isCurrentLocaleInPath) {
+      // Remove the locale segment
+      pathWithoutLocale = '/' + pathSegments.slice(2).join('/');
+    } else {
+      // No locale in path, use the full path
+      pathWithoutLocale = pathname;
+    }
+    
+    // Ensure we don't have double slashes
+    pathWithoutLocale = pathWithoutLocale === '/' ? '' : pathWithoutLocale;
+    
+    // Construct the new path with the new locale
+    return `/${newLocale}${pathWithoutLocale}`;
   };
 
   const getLanguageDisplay = (localeCode: Locale): string => {
@@ -76,9 +89,10 @@ const LanguageSwitcher = () => {
       {isOpen && (
         <div className="absolute right-0 top-full z-50 mt-2 w-32 rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 dark:bg-gray-800">
           {locales.map((localeOption) => (
-            <button
+            <Link
               key={localeOption}
-              onClick={() => switchLanguage(localeOption)}
+              href={getLocalizedPath(localeOption)}
+              onClick={() => setIsOpen(false)}
               className={`block w-full px-4 py-2 text-left text-sm transition-colors hover:bg-gray-100 dark:hover:bg-gray-700 ${
                 locale === localeOption
                   ? 'bg-primary/10 text-primary font-medium'
@@ -86,7 +100,7 @@ const LanguageSwitcher = () => {
               }`}
             >
               {getLanguageName(localeOption)}
-            </button>
+            </Link>
           ))}
         </div>
       )}

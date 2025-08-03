@@ -15,5 +15,6 @@ export default createMiddleware({
 
 export const config = {
   // Match only internationalized pathnames
-  matcher: ['/', '/(ja|en)/:path*']
+  // Updated matcher pattern for Next.js 15 app router
+  matcher: ['/', '/(ja|en)/:path*', '/((?!api|_next|_vercel|.*\\..*).*)']
 }; 

@@ -1,4 +1,7 @@
+"use client";
+
 import Link from "next/link";
+import { useTranslations, useLocale } from "next-intl";
 
 const Breadcrumb = ({
   pageName,
@@ -7,6 +10,9 @@ const Breadcrumb = ({
   pageName: string;
   description: string;
 }) => {
+  const t = useTranslations('Breadcrumb');
+  const locale = useLocale();
+
   return (
     <>
       <section className="relative z-10 overflow-hidden pt-28 lg:pt-[150px]">
@@ -27,10 +33,10 @@ const Breadcrumb = ({
                 <ul className="flex items-center md:justify-end">
                   <li className="flex items-center">
                     <Link
-                      href="/"
+                      href={`/${locale}`}
                       className="pr-1 text-base font-medium text-body-color hover:text-primary"
                     >
-                      Home
+                      {t('home')}
                     </Link>
                     <span className="mr-3 block h-2 w-2 rotate-45 border-r-2 border-t-2 border-body-color"></span>
                   </li>

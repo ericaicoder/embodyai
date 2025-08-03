@@ -39,7 +39,7 @@ const KidouPage = () => {
                     Kidou: Multi-Session AI Coding Unleashed
                   </h1>
                   <p className="mb-8 text-base leading-relaxed text-body-color dark:text-body-color-dark sm:text-lg md:text-xl">
-                    Experience the future of AI-assisted development with Kidou, EmbodyAI's revolutionary Claude code GUI app. Manage multiple AI coding sessions simultaneously, collaborate with parallel AI assistants, and enter the flow state of "vibe coding."
+                    Experience the future of AI-assisted development with Kidou, EmbodyAI&apos;s revolutionary Claude code GUI app. Manage multiple AI coding sessions simultaneously, collaborate with parallel AI assistants, and enter the flow state of &ldquo;vibe coding.&rdquo;
                   </p>
                   <div className="flex flex-col items-start justify-start space-y-4 sm:flex-row sm:space-x-4 sm:space-y-0">
                     <a
@@ -88,7 +88,7 @@ const KidouPage = () => {
               What is Kidou?
             </h2>
             <p className="text-base leading-relaxed text-body-color dark:text-body-color-dark">
-              Kidou (起動 - "startup" in Japanese) is the next evolution in AI-assisted development, designed for developers who want to harness the full power of Claude across multiple concurrent sessions.
+              Kidou (起動 - &ldquo;startup&rdquo; in Japanese) is the next evolution in AI-assisted development, designed for developers who want to harness the full power of Claude across multiple concurrent sessions.
             </p>
           </div>
 
@@ -229,7 +229,7 @@ const KidouPage = () => {
                     🔥 Enter the Vibe Coding Zone
                   </h3>
                   <p className="text-base leading-relaxed text-body-color dark:text-body-color-dark">
-                    Experience a new way of coding where AI feels like a natural extension of your mind. Kidou's intuitive interface eliminates friction between thought and code, keeping you in the flow state longer.
+                    Experience a new way of coding where AI feels like a natural extension of your mind. Kidou&apos;s intuitive interface eliminates friction between thought and code, keeping you in the flow state longer.
                   </p>
                 </div>
 
@@ -262,7 +262,7 @@ const KidouPage = () => {
                     Ready to Transform Your Coding Experience?
                   </h4>
                   <p className="text-base text-body-color dark:text-body-color-dark">
-                    Join the revolution in AI-assisted development with Kidou's multi-session management.
+                    Join the revolution in AI-assisted development with Kidou&apos;s multi-session management.
                   </p>
                 </div>
               </div>

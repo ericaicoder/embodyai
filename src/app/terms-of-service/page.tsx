@@ -25,7 +25,7 @@ const TermsOfService = () => {
                     1. Acceptance of Terms
                   </h2>
                   <p className="mb-6 text-base text-body-color dark:text-body-color-dark">
-                    By accessing or using EmbodyAI's services, you agree to be bound by these Terms of Service.
+                    By accessing or using EmbodyAI&apos;s services, you agree to be bound by these Terms of Service.
                     If you do not agree to these terms, you may not use our services.
                   </p>
 
@@ -99,7 +99,7 @@ const TermsOfService = () => {
                     8. Limitation of Liability
                   </h2>
                   <p className="mb-6 text-base text-body-color dark:text-body-color-dark">
-                    EmbodyAI's liability is limited to the amount paid for our services.
+                    EmbodyAI&apos;s liability is limited to the amount paid for our services.
                     We are not liable for indirect, incidental, or consequential damages.
                     AI outputs should be reviewed and validated before business use.
                   </p>
@@ -116,7 +116,7 @@ const TermsOfService = () => {
                     10. Disclaimers
                   </h2>
                   <p className="mb-4 text-base text-body-color dark:text-body-color-dark">
-                    Our AI services are provided "as is" without warranties. We disclaim:
+                    Our AI services are provided &ldquo;as is&rdquo; without warranties. We disclaim:
                   </p>
                   <ul className="mb-6 list-disc pl-6 text-base text-body-color dark:text-body-color-dark">
                     <li>Accuracy or completeness of AI outputs</li>

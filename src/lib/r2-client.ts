@@ -1,4 +1,5 @@
 import { S3Client, ListObjectsV2Command, GetObjectCommand } from '@aws-sdk/client-s3';
+import { getSignedUrl } from '@aws-sdk/s3-request-presigner';
 
 // Cloudflare R2 configuration
 const R2_ENDPOINT_URL = process.env.R2_ENDPOINT_URL;
@@ -48,6 +49,25 @@ export async function listR2Objects(prefix: string = R2_PREFIX): Promise<R2File[
     }));
   } catch (error) {
     console.error('Error listing R2 objects:', error);
+    throw error;
+  }
+}
+
+/**
+ * Get a public download URL for a specific object
+ */
+export async function getPublicDownloadUrl(key: string): Promise<string> {
+  try {
+    const command = new GetObjectCommand({
+      Bucket: R2_BUCKET_NAME,
+      Key: key,
+    });
+
+    // Generate a pre-signed URL that expires in 1 hour
+    const signedUrl = await getSignedUrl(r2Client, command, { expiresIn: 3600 });
+    return signedUrl;
+  } catch (error) {
+    console.error('Error generating download URL:', error);
     throw error;
   }
 }
@@ -138,27 +158,29 @@ export async function getLatestKidouVersion(): Promise<{
       }
     }
 
-    // Find platform-specific files
-    let appleSiliconFile = '';
-    let intelFile = '';
+    // Find platform-specific files and get their download URLs
+    let appleSiliconUrl = '';
+    let intelUrl = '';
 
     for (const file of dmgFiles) {
       if (file.key.includes('arm64')) {
-        appleSiliconFile = file.key;
+        appleSiliconUrl = await getPublicDownloadUrl(file.key);
       } else if (file.key.includes('x64')) {
-        intelFile = file.key;
+        intelUrl = await getPublicDownloadUrl(file.key);
       }
     }
 
-    // Construct download URLs
-    const baseUrl = `${R2_ENDPOINT_URL}/${R2_BUCKET_NAME}`;
+    // If we didn't find specific files, use fallback URLs
+    if (!appleSiliconUrl) {
+      throw new Error('No Apple Silicon DMG file found in R2 bucket');
+    }
+    if (!intelUrl) {
+      throw new Error('No Intel DMG file found in R2 bucket');
+    }
+
     const downloadUrls = {
-      'macos-apple-silicon': appleSiliconFile 
-        ? `${baseUrl}/${appleSiliconFile}`
-        : `${baseUrl}/${R2_PREFIX}Kidou-${latestVersion}-macOS-arm64.dmg`,
-      'macos-intel': intelFile 
-        ? `${baseUrl}/${intelFile}`
-        : `${baseUrl}/${R2_PREFIX}Kidou-${latestVersion}-macOS-x64.dmg`
+      'macos-apple-silicon': appleSiliconUrl,
+      'macos-intel': intelUrl
     };
 
     return {

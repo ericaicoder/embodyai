@@ -12,26 +12,23 @@ const KidouContent = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const [showDownloadMenu, setShowDownloadMenu] = useState(false);
+  const [downloading, setDownloading] = useState(false);
 
   useEffect(() => {
-    const fetchData = async () => {
+    const fetchVersionData = async () => {
       try {
         setLoading(true);
-        const [urls, version] = await Promise.all([
-          getKidouDownloadUrls(),
-          getKidouVersion(),
-        ]);
-        setDownloadUrls(urls);
+        const version = await getKidouVersion();
         setVersionInfo(version);
       } catch (err) {
-        console.error('Error fetching Kidou data:', err);
-        setError('Failed to load download information');
+        console.error('Error fetching Kidou version:', err);
+        setError('Failed to load version information');
       } finally {
         setLoading(false);
       }
     };
 
-    fetchData();
+    fetchVersionData();
   }, []);
 
   // Handle clicking outside the download menu
@@ -49,9 +46,19 @@ const KidouContent = () => {
     };
   }, [showDownloadMenu]);
 
-  const handleDownload = (url: string) => {
-    window.open(url, '_blank');
-    setShowDownloadMenu(false);
+  const handleDownload = async (downloadType: 'appleSilicon' | 'intel') => {
+    setDownloading(true);
+    try {
+      const urls = await getKidouDownloadUrls();
+      const url = urls[downloadType];
+      window.open(url, '_blank');
+    } catch (err) {
+      console.error('Error fetching download URL:', err);
+      setError('Failed to load download link');
+    } finally {
+      setDownloading(false);
+      setShowDownloadMenu(false);
+    }
   };
 
   const toggleDownloadMenu = () => {
@@ -94,28 +101,42 @@ const KidouContent = () => {
                       <div className="p-2">
                         {/* macOS Apple Silicon */}
                         <button
-                          onClick={() => downloadUrls && handleDownload(downloadUrls.appleSilicon)}
-                          className="w-full text-left p-3 rounded-md hover:bg-gray-100 dark:hover:bg-gray-700 flex items-center space-x-3"
+                          onClick={() => handleDownload('appleSilicon')}
+                          disabled={downloading}
+                          className="w-full text-left p-3 rounded-md hover:bg-gray-100 dark:hover:bg-gray-700 flex items-center space-x-3 disabled:opacity-50 disabled:cursor-not-allowed"
                         >
-                          <svg className="h-5 w-5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z" />
-                          </svg>
+                          {downloading ? (
+                            <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-primary"></div>
+                          ) : (
+                            <svg className="h-5 w-5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z" />
+                            </svg>
+                          )}
                           <div>
-                            <div className="font-semibold text-black dark:text-white">Download for Mac (Apple Silicon)</div>
+                            <div className="font-semibold text-black dark:text-white">
+                              {downloading ? 'Preparing download...' : 'Download for Mac (Apple Silicon)'}
+                            </div>
                             <div className="text-sm text-gray-500 dark:text-gray-400">M1, M2, M3 Macs</div>
                           </div>
                         </button>
 
                         {/* macOS Intel */}
                         <button
-                          onClick={() => downloadUrls && handleDownload(downloadUrls.intel)}
-                          className="w-full text-left p-3 rounded-md hover:bg-gray-100 dark:hover:bg-gray-700 flex items-center space-x-3"
+                          onClick={() => handleDownload('intel')}
+                          disabled={downloading}
+                          className="w-full text-left p-3 rounded-md hover:bg-gray-100 dark:hover:bg-gray-700 flex items-center space-x-3 disabled:opacity-50 disabled:cursor-not-allowed"
                         >
-                          <svg className="h-5 w-5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z" />
-                          </svg>
+                          {downloading ? (
+                            <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-primary"></div>
+                          ) : (
+                            <svg className="h-5 w-5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z" />
+                            </svg>
+                          )}
                           <div>
-                            <div className="font-semibold text-black dark:text-white">Download for Mac (Intel)</div>
+                            <div className="font-semibold text-black dark:text-white">
+                              {downloading ? 'Preparing download...' : 'Download for Mac (Intel)'}
+                            </div>
                             <div className="text-sm text-gray-500 dark:text-gray-400">Intel-based Macs</div>
                           </div>
                         </button>

@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { listR2Objects, extractVersionFromFilename, extractBuildNumber } from '@/lib/r2-client';
+import { listR2Objects, getPublicDownloadUrl } from '@/lib/r2-client';
 
 /**
  * Find the latest DMG file for a specific platform
@@ -14,10 +14,7 @@ async function findLatestDmgFile(platform: 'macos-apple-silicon' | 'macos-intel'
     );
 
     if (dmgFiles.length === 0) {
-      // No DMG files found, use default
-      return platform === 'macos-apple-silicon' 
-        ? 'https://8e5cfe29add1b0bcab4a4ba85161f859.r2.cloudflarestorage.com/pub/kidou/Kidou-1.0.0-macOS-arm64.dmg'
-        : 'https://8e5cfe29add1b0bcab4a4ba85161f859.r2.cloudflarestorage.com/pub/kidou/Kidou-1.0.0-macOS-x64.dmg';
+      throw new Error('No DMG files found in R2 bucket');
     }
 
     // Sort files by last modified date (newest first)
@@ -28,26 +25,20 @@ async function findLatestDmgFile(platform: 'macos-apple-silicon' | 'macos-intel'
     
     for (const file of dmgFiles) {
       if (file.key.includes(platformKeyword)) {
-        return `https://8e5cfe29add1b0bcab4a4ba85161f859.r2.cloudflarestorage.com/pub/${file.key}`;
+        return await getPublicDownloadUrl(file.key);
       }
     }
 
     // If no platform-specific file found, use the most recent DMG file
     if (dmgFiles.length > 0) {
-      return `https://8e5cfe29add1b0bcab4a4ba85161f859.r2.cloudflarestorage.com/pub/${dmgFiles[0].key}`;
+      return await getPublicDownloadUrl(dmgFiles[0].key);
     }
 
-    // Fallback to default filename
-    return platform === 'macos-apple-silicon' 
-      ? 'https://8e5cfe29add1b0bcab4a4ba85161f859.r2.cloudflarestorage.com/pub/kidou/Kidou-1.0.0-macOS-arm64.dmg'
-      : 'https://8e5cfe29add1b0bcab4a4ba85161f859.r2.cloudflarestorage.com/pub/kidou/Kidou-1.0.0-macOS-x64.dmg';
+    throw new Error(`No ${platform} DMG file found in R2 bucket`);
 
   } catch (error) {
     console.error('Error finding DMG file:', error);
-    // Fallback to default filename
-    return platform === 'macos-apple-silicon' 
-      ? 'https://8e5cfe29add1b0bcab4a4ba85161f859.r2.cloudflarestorage.com/pub/kidou/Kidou-1.0.0-macOS-arm64.dmg'
-      : 'https://8e5cfe29add1b0bcab4a4ba85161f859.r2.cloudflarestorage.com/pub/kidou/Kidou-1.0.0-macOS-x64.dmg';
+    throw error;
   }
 }
 

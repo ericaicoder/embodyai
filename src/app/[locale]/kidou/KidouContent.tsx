@@ -1,10 +1,62 @@
 "use client";
 import Breadcrumb from "@/components/Common/Breadcrumb";
 import { useTranslations, useLocale } from "next-intl";
+import { useState, useEffect } from "react";
+import { getKidouDownloadUrls, getKidouVersion, type KidouVersion } from "@/lib/kidou-api";
 
 const KidouContent = () => {
   const t = useTranslations('Kidou');
   const locale = useLocale();
+  const [downloadUrls, setDownloadUrls] = useState<{ appleSilicon: string; intel: string } | null>(null);
+  const [versionInfo, setVersionInfo] = useState<KidouVersion | null>(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
+  const [showDownloadMenu, setShowDownloadMenu] = useState(false);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        setLoading(true);
+        const [urls, version] = await Promise.all([
+          getKidouDownloadUrls(),
+          getKidouVersion(),
+        ]);
+        setDownloadUrls(urls);
+        setVersionInfo(version);
+      } catch (err) {
+        console.error('Error fetching Kidou data:', err);
+        setError('Failed to load download information');
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchData();
+  }, []);
+
+  // Handle clicking outside the download menu
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      const target = event.target as Element;
+      if (showDownloadMenu && !target.closest('.download-menu-container')) {
+        setShowDownloadMenu(false);
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [showDownloadMenu]);
+
+  const handleDownload = (url: string) => {
+    window.open(url, '_blank');
+    setShowDownloadMenu(false);
+  };
+
+  const toggleDownloadMenu = () => {
+    setShowDownloadMenu(!showDownloadMenu);
+  };
 
   return (
     <>
@@ -17,48 +69,90 @@ const KidouContent = () => {
       <section className="pt-16 md:pt-20 lg:pt-28">
         <div className="container">
           <div className="border-b border-body-color/[.15] pb-16 dark:border-white/[.15] md:pb-20 lg:pb-28">
-            <div className="-mx-4 flex flex-wrap items-center">
-              <div className="w-full px-4 lg:w-1/2">
-                <div className="mb-12 max-w-[570px] lg:mb-0">
-                  <h1 className="mb-5 text-3xl font-bold leading-tight text-black dark:text-white sm:text-4xl sm:leading-tight md:text-5xl md:leading-tight">
-                    {t('title')}
-                  </h1>
-                  <p className="mb-8 text-base leading-relaxed text-body-color dark:text-body-color-dark sm:text-lg md:text-xl">
-                    {t('description')}
-                  </p>
-                  <div className="flex flex-col items-start justify-start space-y-4 sm:flex-row sm:space-x-4 sm:space-y-0">
-                    <a
-                      href="#features"
-                      className="rounded-xs bg-primary px-8 py-4 text-base font-semibold text-white duration-300 ease-in-out hover:bg-primary/80"
-                    >
-                      {t('exploreFeatures')}
-                    </a>
-                    <a
-                      href={`/${locale}/contact`}
-                      className="inline-block rounded-xs bg-black px-8 py-4 text-base font-semibold text-white duration-300 ease-in-out hover:bg-black/90 dark:bg-white/10 dark:text-white dark:hover:bg-white/5"
-                    >
-                      {t('getEarlyAccess')}
-                    </a>
-                  </div>
-                </div>
-              </div>
+            <div className="mx-auto max-w-[800px] text-center">
+              <h1 className="mb-5 text-3xl font-bold leading-tight text-black dark:text-white sm:text-4xl sm:leading-tight md:text-5xl md:leading-tight">
+                {t('title')}
+              </h1>
+              <p className="mb-8 text-base leading-relaxed text-body-color dark:text-body-color-dark sm:text-lg md:text-xl">
+                {t('description')}
+              </p>
+              <div className="flex flex-col items-center justify-center space-y-4 sm:flex-row sm:space-x-4 sm:space-y-0">
+                <div className="relative">
+                  <button
+                    onClick={toggleDownloadMenu}
+                    className="rounded-xs bg-primary px-8 py-4 text-base font-semibold text-white duration-300 ease-in-out hover:bg-primary/80 flex items-center space-x-2"
+                  >
+                    <svg className="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                    </svg>
+                    <span>{t('downloadNow')}</span>
+                  </button>
+                  
+                  {/* Download Menu */}
+                  {showDownloadMenu && (
+                    <div className="download-menu-container absolute top-full left-0 mt-2 w-96 bg-white dark:bg-gray-dark rounded-lg shadow-lg border border-gray-200 dark:border-gray-700 z-50">
+                      <div className="p-2">
+                        {/* macOS Apple Silicon */}
+                        <button
+                          onClick={() => downloadUrls && handleDownload(downloadUrls.appleSilicon)}
+                          className="w-full text-left p-3 rounded-md hover:bg-gray-100 dark:hover:bg-gray-700 flex items-center space-x-3"
+                        >
+                          <svg className="h-5 w-5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z" />
+                          </svg>
+                          <div>
+                            <div className="font-semibold text-black dark:text-white">Download for Mac (Apple Silicon)</div>
+                            <div className="text-sm text-gray-500 dark:text-gray-400">M1, M2, M3 Macs</div>
+                          </div>
+                        </button>
 
-              <div className="w-full px-4 lg:w-1/2">
-                <div className="relative mx-auto aspect-video max-w-[500px] lg:mr-0">
-                  {/* Placeholder for Kidou screenshot/demo */}
-                  <div className="flex h-full w-full items-center justify-center rounded-lg bg-gradient-to-br from-primary/10 to-primary/5 border border-primary/20">
-                    <div className="text-center">
-                      <div className="mx-auto mb-4 h-16 w-16 rounded-full bg-primary/20 flex items-center justify-center">
-                        <svg className="h-8 w-8 text-primary" fill="currentColor" viewBox="0 0 20 20">
-                          <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                        </svg>
+                        {/* macOS Intel */}
+                        <button
+                          onClick={() => downloadUrls && handleDownload(downloadUrls.intel)}
+                          className="w-full text-left p-3 rounded-md hover:bg-gray-100 dark:hover:bg-gray-700 flex items-center space-x-3"
+                        >
+                          <svg className="h-5 w-5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z" />
+                          </svg>
+                          <div>
+                            <div className="font-semibold text-black dark:text-white">Download for Mac (Intel)</div>
+                            <div className="text-sm text-gray-500 dark:text-gray-400">Intel-based Macs</div>
+                          </div>
+                        </button>
+
+                        <div className="border-t border-gray-200 dark:border-gray-700 my-2"></div>
+
+                        {/* Windows - Coming Soon */}
+                        <div className="w-full text-left p-3 rounded-md flex items-center space-x-3 opacity-60">
+                          <svg className="h-5 w-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z" />
+                          </svg>
+                          <div>
+                            <div className="font-semibold text-gray-500 dark:text-gray-400">Download for Windows</div>
+                            <div className="text-sm text-gray-400 dark:text-gray-500">Coming Soon</div>
+                          </div>
+                        </div>
+
+                        {/* Linux - Coming Soon */}
+                        <div className="w-full text-left p-3 rounded-md flex items-center space-x-3 opacity-60">
+                          <svg className="h-5 w-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z" />
+                          </svg>
+                          <div>
+                            <div className="font-semibold text-gray-500 dark:text-gray-400">Download for Linux</div>
+                            <div className="text-sm text-gray-400 dark:text-gray-500">Coming Soon</div>
+                          </div>
+                        </div>
                       </div>
-                      <p className="text-sm text-body-color dark:text-body-color-dark">
-                        Kidou Interface Demo
-                      </p>
                     </div>
-                  </div>
+                  )}
                 </div>
+                <a
+                  href="#features"
+                  className="rounded-xs bg-black px-8 py-4 text-base font-semibold text-white duration-300 ease-in-out hover:bg-black/90 dark:bg-white/10 dark:text-white dark:hover:bg-white/5"
+                >
+                  {t('exploreFeatures')}
+                </a>
               </div>
             </div>
           </div>
@@ -251,34 +345,6 @@ const KidouContent = () => {
                   </p>
                 </div>
               </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* CTA Section */}
-      <section className="bg-primary py-16 md:py-20 lg:py-28">
-        <div className="container">
-          <div className="mx-auto max-w-[570px] text-center">
-            <h2 className="mb-4 text-3xl font-bold leading-tight text-white sm:text-4xl sm:leading-tight">
-              {t('cta.title')}
-            </h2>
-            <p className="mb-8 text-base leading-relaxed text-white/90">
-              {t('cta.description')}
-            </p>
-            <div className="flex flex-col items-center justify-center space-y-4 sm:flex-row sm:space-x-4 sm:space-y-0">
-              <a
-                href={`/${locale}/contact`}
-                className="rounded-xs bg-white px-8 py-4 text-base font-semibold text-primary duration-300 ease-in-out hover:bg-white/90"
-              >
-                {t('cta.requestEarlyAccess')}
-              </a>
-              <a
-                href={`/${locale}/contact`}
-                className="rounded-xs border border-white px-8 py-4 text-base font-semibold text-white duration-300 ease-in-out hover:bg-white hover:text-primary"
-              >
-                {t('cta.scheduleDemo')}
-              </a>
             </div>
           </div>
         </div>

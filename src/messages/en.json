@@ -113,6 +113,14 @@
     "description": "Experience the future of AI-assisted development with Kidou, EmbodyAI's revolutionary Claude code GUI app. Manage multiple AI coding sessions simultaneously, collaborate with parallel AI assistants, and enter the flow state of \"vibe coding.\"",
     "exploreFeatures": "Explore Features",
     "getEarlyAccess": "Get Early Access",
+    "downloadNow": "Download Now",
+    "downloadForMac": "Download for macOS",
+    "downloadAppleSilicon": "Download for Apple Silicon (M1/M2/M3)",
+    "downloadIntel": "Download for Intel Mac",
+    "systemRequirements": "System Requirements",
+    "macosVersion": "macOS 12.0 or later",
+    "memory": "8GB RAM minimum, 16GB recommended",
+    "storage": "2GB available disk space",
     "whatIsKidou": {
       "title": "What is Kidou?",
       "description": "Kidou (起動 - \"startup\" in Japanese) is the next evolution in AI-assisted development, designed for developers who want to harness the full power of Claude across multiple concurrent sessions."

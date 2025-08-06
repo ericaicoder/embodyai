@@ -164,4 +164,20 @@ export async function getLatestKidouVersion(): Promise<{
     console.error('Error getting latest Kidou version:', error);
     throw error;
   }
+}
+
+/**
+ * Get release notes for a specific version from R2
+ * Expected file format: kidou/{version}.txt (e.g., kidou/0.0.15.txt)
+ */
+export async function getKidouReleaseNotes(version: string): Promise<string> {
+  try {
+    const releaseNotesKey = `${R2_PREFIX}${version}.txt`;
+    const releaseNotesBuffer = await getR2Object(releaseNotesKey);
+    return releaseNotesBuffer.toString('utf-8');
+  } catch (error) {
+    console.error(`Error getting release notes for version ${version}:`, error);
+    // Return empty string if release notes file doesn't exist
+    return '';
+  }
 } 

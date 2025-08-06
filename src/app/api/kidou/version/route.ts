@@ -1,12 +1,13 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { getLatestKidouVersion, getKidouReleaseNotes } from '@/lib/r2-client';
+import { getLatestKidouVersion } from '@/lib/r2-client';
+import { releaseNotes } from '@/kidou/release';
 
 export async function GET(request: NextRequest) {
   try {
     const versionInfo = await getLatestKidouVersion();
     
-    // Fetch release notes for the latest version
-    const releaseNotes = await getKidouReleaseNotes(versionInfo.version);
+    // Get release notes from local file
+    const localReleaseNotes = releaseNotes[versionInfo.version as keyof typeof releaseNotes] || '';
 
     return NextResponse.json({
       success: true,
@@ -14,7 +15,7 @@ export async function GET(request: NextRequest) {
       buildNumber: versionInfo.buildNumber,
       releaseDate: versionInfo.releaseDate,
       timestamp: new Date().toISOString(),
-      note: releaseNotes
+      note: localReleaseNotes
     });
 
   } catch (error) {

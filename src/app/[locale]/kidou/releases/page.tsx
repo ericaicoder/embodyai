@@ -2,14 +2,14 @@
 
 import { useTranslations, useLocale } from "next-intl";
 import Link from "next/link";
-import { releaseNotes } from "@/kidou/release";
+import { releaseInfo } from "@/kidou/release";
 
 const ReleasesPage = () => {
   const t = useTranslations('Breadcrumb');
   const locale = useLocale();
   
-  // Get all available versions from the release notes
-  const versions = Object.keys(releaseNotes).sort((a, b) => {
+  // Get all available versions from the release info
+  const versions = Object.keys(releaseInfo).sort((a, b) => {
     // Sort versions in descending order (newest first)
     const aParts = a.split('.').map(Number);
     const bParts = b.split('.').map(Number);
@@ -46,8 +46,8 @@ const ReleasesPage = () => {
 
             <div className="space-y-12">
               {versions.map((version) => {
-                const releaseNote = releaseNotes[version as keyof typeof releaseNotes];
-                const lines = parseReleaseNotes(releaseNote);
+                const releaseData = releaseInfo[version as keyof typeof releaseInfo];
+                const lines = parseReleaseNotes(releaseData.releaseNotes);
                 
                 return (
                   <div
@@ -66,6 +66,9 @@ const ReleasesPage = () => {
                         </svg>
                         Release Version
                       </div>
+                      <p className="mt-2 text-sm text-body-color dark:text-body-color-dark">
+                        Released on {new Date(releaseData.releaseDate).toLocaleDateString()}
+                      </p>
                     </div>
 
                     {/* Release notes content */}

@@ -1,22 +1,35 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { getLatestKidouVersion } from '@/lib/r2-client';
-import { releaseNotes } from '@/kidou/release';
+import { releaseInfo } from '@/kidou/release';
 
 export async function GET(request: NextRequest) {
   try {
-    const versionInfo = await getLatestKidouVersion();
-    
-    // Get release notes from local file
-    const localReleaseNotes = releaseNotes[versionInfo.version as keyof typeof releaseNotes] || '';
+    // Get all versions from releaseInfo and sort them to find the latest
+    const versions = Object.keys(releaseInfo).sort((a, b) => {
+      const aParts = a.split('.').map(Number);
+      const bParts = b.split('.').map(Number);
+      
+      for (let i = 0; i < Math.max(aParts.length, bParts.length); i++) {
+        const aPart = aParts[i] || 0;
+        const bPart = bParts[i] || 0;
+        
+        if (aPart !== bPart) {
+          return bPart - aPart; // Descending order (latest first)
+        }
+      }
+      return 0;
+    });
+
+    const latestVersion = versions[0];
+    const latestReleaseInfo = releaseInfo[latestVersion as keyof typeof releaseInfo];
 
     return NextResponse.json({
       success: true,
-      version: versionInfo.version,
-      buildNumber: versionInfo.buildNumber,
-      releaseDate: versionInfo.releaseDate,
-      releaseUrl: "https://embodyai.co.jp/kidou/releases",
+      version: latestVersion,
+      buildNumber: "latest", // Since we're not using R2 data
+      releaseDate: latestReleaseInfo.releaseDate,
+      releaseUrl: latestReleaseInfo.releaseUrl,
       timestamp: new Date().toISOString(),
-      note: localReleaseNotes
+      note: latestReleaseInfo.releaseNotes
     });
 
   } catch (error) {

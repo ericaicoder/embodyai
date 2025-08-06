@@ -1,22 +1,18 @@
-"use client";
-
-import Breadcrumb from "@/components/Common/Breadcrumb";
-import { useTranslations } from "next-intl";
-import Link from "next/link";
 import { releaseNotes } from "@/kidou/release";
 import { notFound } from "next/navigation";
-import { use } from "react";
+import Breadcrumb from "@/components/Common/Breadcrumb";
+import Link from "next/link";
 
 interface PageProps {
   params: Promise<{ version: string; locale: string }>;
 }
 
-const ReleaseVersionPage = ({ params }: PageProps) => {
-  const { version, locale } = use(params);
-  const t = useTranslations('Breadcrumb');
+const ReleaseVersionPage = async ({ params }: PageProps) => {
+  const { version } = await params;
   
   // Check if the version exists in our release notes
   const versionKey = version as keyof typeof releaseNotes;
+  console.log(versionKey);
   if (!releaseNotes[versionKey]) {
     notFound();
   }
@@ -25,14 +21,9 @@ const ReleaseVersionPage = ({ params }: PageProps) => {
   
   // Parse the release notes (assuming markdown-like format)
   const lines = releaseNote.trim().split('\n').filter(line => line.trim());
-  
+
   return (
     <>
-      <Breadcrumb
-        pageName={`Kidou v${version}`}
-        description={`Release notes and changes for Kidou version ${version}`}
-      />
-
       <section className="pb-[120px] pt-[120px]">
         <div className="container">
           <div className="mx-auto max-w-4xl">

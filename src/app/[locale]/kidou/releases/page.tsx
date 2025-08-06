@@ -1,6 +1,5 @@
 "use client";
 
-import Breadcrumb from "@/components/Common/Breadcrumb";
 import { useTranslations } from "next-intl";
 import Link from "next/link";
 import { releaseNotes } from "@/kidou/release";
@@ -27,11 +26,6 @@ const ReleasesPage = () => {
 
   return (
     <>
-      <Breadcrumb
-        pageName="Kidou Releases"
-        description="Browse all Kidou releases and their release notes"
-      />
-
       <section className="pb-[120px] pt-[120px]">
         <div className="container">
           <div className="mx-auto max-w-4xl">

@@ -24,4 +24,9 @@ export const releaseInfo = {
         "releaseNotes": note_0_0_16,
         "releaseUrl": "https://embodyai.co.jp/kidou/releases",
     },
+    "0.0.18": {
+        "releaseDate": "2025-08-06",
+        "releaseNotes": note_0_0_16,
+        "releaseUrl": "https://embodyai.co.jp/kidou/releases",
+    },
 }

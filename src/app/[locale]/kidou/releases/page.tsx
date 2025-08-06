@@ -1,11 +1,12 @@
 "use client";
 
-import { useTranslations } from "next-intl";
+import { useTranslations, useLocale } from "next-intl";
 import Link from "next/link";
 import { releaseNotes } from "@/kidou/release";
 
 const ReleasesPage = () => {
   const t = useTranslations('Breadcrumb');
+  const locale = useLocale();
   
   // Get all available versions from the release notes
   const versions = Object.keys(releaseNotes).sort((a, b) => {
@@ -54,7 +55,7 @@ const ReleasesPage = () => {
                       </p>
                     </div>
                     <Link
-                      href={`/kidou/releases/${version}`}
+                      href={`/${locale}/kidou/releases/${version}`}
                       className="rounded-sm bg-primary px-6 py-3 text-base font-semibold text-white duration-300 ease-in-out hover:bg-primary/80"
                     >
                       View Details

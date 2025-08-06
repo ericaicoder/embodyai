@@ -14,7 +14,15 @@ export default createMiddleware({
 });
 
 export const config = {
-  // Match only internationalized pathnames
-  // Updated matcher pattern for Next.js 15 app router
-  matcher: ['/', '/(ja|en)/:path*', '/((?!api|_next|_vercel|.*\\..*).*)']
-}; 
+  // Match all pathnames except for those starting with:
+  // - /api (API routes)
+  // - /trpc (tRPC routes)  
+  // - /_next (Next.js internals)
+  // - /_vercel (Vercel internals)
+  // - files with extensions (e.g. favicon.ico)
+  matcher: [
+    '/',
+    '/((?!api|trpc|_next|_vercel|.*\\..*).*)',
+    '/kidou/releases/:path*'
+  ]
+};

@@ -2,17 +2,17 @@ import { releaseNotes } from "@/kidou/release";
 import { notFound } from "next/navigation";
 import Breadcrumb from "@/components/Common/Breadcrumb";
 import Link from "next/link";
+import { useLocale } from "next-intl";
 
 interface PageProps {
   params: Promise<{ version: string; locale: string }>;
 }
 
 const ReleaseVersionPage = async ({ params }: PageProps) => {
-  const { version } = await params;
+  const { version, locale } = await params;
   
   // Check if the version exists in our release notes
   const versionKey = version as keyof typeof releaseNotes;
-  console.log(versionKey);
   if (!releaseNotes[versionKey]) {
     notFound();
   }
@@ -30,7 +30,7 @@ const ReleaseVersionPage = async ({ params }: PageProps) => {
             {/* Back to releases link */}
             <div className="mb-8">
               <Link
-                href="/kidou/releases"
+                href={`/${locale}/kidou/releases`}
                 className="inline-flex items-center text-primary hover:underline"
               >
                 <svg className="mr-2 h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -95,7 +95,7 @@ const ReleaseVersionPage = async ({ params }: PageProps) => {
                 Download Kidou v{version}
               </h3>
               <Link
-                href="/kidou"
+                href={`/${locale}/kidou`}
                 className="inline-flex items-center rounded-sm bg-primary px-8 py-4 text-base font-semibold text-white duration-300 ease-in-out hover:bg-primary/80"
               >
                 <svg className="mr-2 h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">

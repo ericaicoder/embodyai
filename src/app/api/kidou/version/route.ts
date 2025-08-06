@@ -14,6 +14,7 @@ export async function GET(request: NextRequest) {
       version: versionInfo.version,
       buildNumber: versionInfo.buildNumber,
       releaseDate: versionInfo.releaseDate,
+      releaseUrl: "https://embodyai.co.jp/kidou/releases",
       timestamp: new Date().toISOString(),
       note: localReleaseNotes
     });

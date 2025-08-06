@@ -122,10 +122,6 @@ export async function getLatestKidouVersion(): Promise<{
   version: string;
   buildNumber: string;
   releaseDate: string;
-  downloadUrls: {
-    'macos-apple-silicon': string;
-    'macos-intel': string;
-  };
   files: R2File[];
 }> {
   try {
@@ -158,36 +154,10 @@ export async function getLatestKidouVersion(): Promise<{
       }
     }
 
-    // Find platform-specific files and get their download URLs
-    let appleSiliconUrl = '';
-    let intelUrl = '';
-
-    for (const file of dmgFiles) {
-      if (file.key.includes('arm64')) {
-        appleSiliconUrl = await getPublicDownloadUrl(file.key);
-      } else if (file.key.includes('x64')) {
-        intelUrl = await getPublicDownloadUrl(file.key);
-      }
-    }
-
-    // If we didn't find specific files, use fallback URLs
-    if (!appleSiliconUrl) {
-      throw new Error('No Apple Silicon DMG file found in R2 bucket');
-    }
-    if (!intelUrl) {
-      throw new Error('No Intel DMG file found in R2 bucket');
-    }
-
-    const downloadUrls = {
-      'macos-apple-silicon': appleSiliconUrl,
-      'macos-intel': intelUrl
-    };
-
     return {
       version: latestVersion,
       buildNumber: latestBuildNumber,
       releaseDate: latestReleaseDate,
-      downloadUrls,
       files: dmgFiles,
     };
   } catch (error) {

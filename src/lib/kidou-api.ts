@@ -3,10 +3,6 @@ export interface KidouVersion {
   version: string;
   buildNumber: string;
   releaseDate: string;
-  downloadUrls: {
-    'macos-apple-silicon': string;
-    'macos-intel': string;
-  };
   timestamp: string;
   note?: string;
 }

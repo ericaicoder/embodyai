@@ -6,8 +6,6 @@ import { getKidouDownloadUrls, getKidouVersion, type KidouVersion } from "@/lib/
 
 const KidouContent = () => {
   const t = useTranslations('Kidou');
-  const locale = useLocale();
-  const [downloadUrls, setDownloadUrls] = useState<{ appleSilicon: string; intel: string } | null>(null);
   const [versionInfo, setVersionInfo] = useState<KidouVersion | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);

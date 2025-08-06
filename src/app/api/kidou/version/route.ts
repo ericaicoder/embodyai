@@ -10,7 +10,6 @@ export async function GET(request: NextRequest) {
       version: versionInfo.version,
       buildNumber: versionInfo.buildNumber,
       releaseDate: versionInfo.releaseDate,
-      downloadUrls: versionInfo.downloadUrls,
       timestamp: new Date().toISOString(),
       note: `Found ${versionInfo.files.length} DMG files in R2 bucket`
     });
@@ -20,16 +19,8 @@ export async function GET(request: NextRequest) {
     
     // Return default version info on error
     return NextResponse.json({
-      success: true,
-      version: '1.0.0',
-      buildNumber: '1',
-      releaseDate: new Date().toISOString(),
-      downloadUrls: {
-        'macos-apple-silicon': 'https://8e5cfe29add1b0bcab4a4ba85161f859.r2.cloudflarestorage.com/pub/kidou/Kidou-1.0.0-macOS-arm64.dmg',
-        'macos-intel': 'https://8e5cfe29add1b0bcab4a4ba85161f859.r2.cloudflarestorage.com/pub/kidou/Kidou-1.0.0-macOS-x64.dmg'
-      },
-      timestamp: new Date().toISOString(),
-      note: 'Using default version info due to error'
+      success: false,
+      message: 'Error getting version info'
     });
   }
 } 

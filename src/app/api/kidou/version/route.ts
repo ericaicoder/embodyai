@@ -25,7 +25,6 @@ export async function GET(request: NextRequest) {
     return NextResponse.json({
       success: true,
       version: latestVersion,
-      buildNumber: "latest", // Since we're not using R2 data
       releaseDate: latestReleaseInfo.releaseDate,
       releaseUrl: latestReleaseInfo.releaseUrl,
       timestamp: new Date().toISOString(),

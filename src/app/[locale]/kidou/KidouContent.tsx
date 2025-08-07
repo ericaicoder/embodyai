@@ -2,7 +2,21 @@
 import Breadcrumb from "@/components/Common/Breadcrumb";
 import { useTranslations, useLocale } from "next-intl";
 import { useState, useEffect } from "react";
-import { getKidouDownloadUrls, getKidouVersion, type KidouVersion } from "@/lib/kidou-api";
+
+interface KidouVersion {
+  success: boolean;
+  version: string;
+  releaseDate: string;
+  releaseUrl: string;
+  downloadUrl: {
+    mac: {
+      arm64: string;
+      intel: string;
+    };
+  };
+  timestamp: string;
+  note?: string;
+}
 
 const KidouContent = () => {
   const t = useTranslations('Kidou');
@@ -16,7 +30,11 @@ const KidouContent = () => {
     const fetchVersionData = async () => {
       try {
         setLoading(true);
-        const version = await getKidouVersion();
+        const response = await fetch('/api/kidou/version');
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        const version = await response.json();
         setVersionInfo(version);
       } catch (err) {
         console.error('Error fetching Kidou version:', err);
@@ -47,8 +65,14 @@ const KidouContent = () => {
   const handleDownload = async (downloadType: 'appleSilicon' | 'intel') => {
     setDownloading(true);
     try {
-      const urls = await getKidouDownloadUrls();
-      const url = urls[downloadType];
+      if (!versionInfo) {
+        throw new Error('Version info not available');
+      }
+      
+      const url = downloadType === 'appleSilicon' 
+        ? versionInfo.downloadUrl.mac.arm64 
+        : versionInfo.downloadUrl.mac.intel;
+      
       window.open(url, '_blank');
     } catch (err) {
       console.error('Error fetching download URL:', err);
@@ -100,7 +124,7 @@ const KidouContent = () => {
                         {/* macOS Apple Silicon */}
                         <button
                           onClick={() => handleDownload('appleSilicon')}
-                          disabled={downloading}
+                          disabled={downloading || !versionInfo}
                           className="w-full text-left p-3 rounded-md hover:bg-gray-100 dark:hover:bg-gray-700 flex items-center space-x-3 disabled:opacity-50 disabled:cursor-not-allowed"
                         >
                           {downloading ? (
@@ -121,14 +145,14 @@ const KidouContent = () => {
                         {/* macOS Intel */}
                         <button
                           onClick={() => handleDownload('intel')}
-                          disabled={downloading}
+                          disabled={downloading || !versionInfo}
                           className="w-full text-left p-3 rounded-md hover:bg-gray-100 dark:hover:bg-gray-700 flex items-center space-x-3 disabled:opacity-50 disabled:cursor-not-allowed"
                         >
                           {downloading ? (
                             <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-primary"></div>
                           ) : (
                             <svg className="h-5 w-5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z" />
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2z" />
                             </svg>
                           )}
                           <div>

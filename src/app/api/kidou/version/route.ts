@@ -29,8 +29,8 @@ export async function GET(request: NextRequest) {
       releaseUrl: latestReleaseInfo.releaseUrl,
       downloadUrl: {
         mac: {
-          arm64: `https://r2.embodyai.co.jp/kidou/Kidou-${latestVersion}-macOS-arm64.dmg`,
-          intel: `https://r2.embodyai.co.jp/kidou/Kidou-${latestVersion}-macOS-x64.dmg`
+          arm64: `https://github.com/embody-ai/kidou/releases/download/v${latestVersion}/Kidou-${latestVersion}-macOS-arm64.dmg`,
+          intel: `https://github.com/embody-ai/kidou/releases/download/v${latestVersion}/Kidou-${latestVersion}-macOS-x64.dmg`
         }
       },
       timestamp: new Date().toISOString(),

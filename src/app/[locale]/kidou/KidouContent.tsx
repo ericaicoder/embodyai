@@ -1,6 +1,6 @@
 "use client";
 import Breadcrumb from "@/components/Common/Breadcrumb";
-import { useTranslations, useLocale } from "next-intl";
+import { useTranslations } from "next-intl";
 import { useState, useEffect } from "react";
 
 interface KidouVersion {
@@ -38,7 +38,7 @@ const KidouContent = () => {
         setVersionInfo(version);
       } catch (err) {
         console.error('Error fetching Kidou version:', err);
-        setError('Failed to load version information');
+        setError(t('errors.versionLoadFailed'));
       } finally {
         setLoading(false);
       }
@@ -76,7 +76,7 @@ const KidouContent = () => {
       window.open(url, '_blank');
     } catch (err) {
       console.error('Error fetching download URL:', err);
-      setError('Failed to load download link');
+      setError(t('errors.downloadLinkFailed'));
     } finally {
       setDownloading(false);
       setShowDownloadMenu(false);
@@ -136,9 +136,9 @@ const KidouContent = () => {
                           )}
                           <div>
                             <div className="font-semibold text-black dark:text-white">
-                              {downloading ? 'Preparing download...' : 'Download for Mac (Apple Silicon)'}
+                              {downloading ? t('preparingDownload') : t('downloadAppleSilicon')}
                             </div>
-                            <div className="text-sm text-gray-500 dark:text-gray-400">M1, M2, M3 Macs</div>
+                            <div className="text-sm text-gray-500 dark:text-gray-400">{t('appleSiliconNote')}</div>
                           </div>
                         </button>
 
@@ -157,9 +157,9 @@ const KidouContent = () => {
                           )}
                           <div>
                             <div className="font-semibold text-black dark:text-white">
-                              {downloading ? 'Preparing download...' : 'Download for Mac (Intel)'}
+                              {downloading ? t('preparingDownload') : t('downloadIntel')}
                             </div>
-                            <div className="text-sm text-gray-500 dark:text-gray-400">Intel-based Macs</div>
+                            <div className="text-sm text-gray-500 dark:text-gray-400">{t('intelNote')}</div>
                           </div>
                         </button>
 
@@ -171,8 +171,8 @@ const KidouContent = () => {
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z" />
                           </svg>
                           <div>
-                            <div className="font-semibold text-gray-500 dark:text-gray-400">Download for Windows</div>
-                            <div className="text-sm text-gray-400 dark:text-gray-500">Coming Soon</div>
+                            <div className="font-semibold text-gray-500 dark:text-gray-400">{t('downloadWindows')}</div>
+                            <div className="text-sm text-gray-400 dark:text-gray-500">{t('comingSoon')}</div>
                           </div>
                         </div>
 
@@ -182,8 +182,8 @@ const KidouContent = () => {
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z" />
                           </svg>
                           <div>
-                            <div className="font-semibold text-gray-500 dark:text-gray-400">Download for Linux</div>
-                            <div className="text-sm text-gray-400 dark:text-gray-500">Coming Soon</div>
+                            <div className="font-semibold text-gray-500 dark:text-gray-400">{t('downloadLinux')}</div>
+                            <div className="text-sm text-gray-400 dark:text-gray-500">{t('comingSoon')}</div>
                           </div>
                         </div>
                       </div>
@@ -222,10 +222,10 @@ const KidouContent = () => {
                 </svg>
               </div>
               <h3 className="mb-4 text-xl font-bold text-black dark:text-white">
-                Multi-Session Management
+                {t('whatIsKidou.cards.multiSession.title')}
               </h3>
               <p className="text-base leading-relaxed text-body-color dark:text-body-color-dark">
-                Open and manage multiple Claude coding sessions simultaneously. Each session maintains its own context, memory, and conversation thread for specialized tasks.
+                {t('whatIsKidou.cards.multiSession.description')}
               </p>
             </div>
 
@@ -236,10 +236,10 @@ const KidouContent = () => {
                 </svg>
               </div>
               <h3 className="mb-4 text-xl font-bold text-black dark:text-white">
-                Vibe Coding Experience
+                {t('whatIsKidou.cards.vibeCoding.title')}
               </h3>
               <p className="text-base leading-relaxed text-body-color dark:text-body-color-dark">
-                Enter the flow state with intuitive, responsive UI designed for seamless AI collaboration. Code, chat, and create without breaking your mental momentum.
+                {t('whatIsKidou.cards.vibeCoding.description')}
               </p>
             </div>
 
@@ -250,10 +250,10 @@ const KidouContent = () => {
                 </svg>
               </div>
               <h3 className="mb-4 text-xl font-bold text-black dark:text-white">
-                Intelligent Session Orchestration
+                {t('whatIsKidou.cards.intelligentOrchestration.title')}
               </h3>
               <p className="text-base leading-relaxed text-body-color dark:text-body-color-dark">
-                Smart session management with automatic context switching, session persistence, and intelligent workload distribution across your AI assistants.
+                {t('whatIsKidou.cards.intelligentOrchestration.description')}
               </p>
             </div>
           </div>
@@ -275,61 +275,61 @@ const KidouContent = () => {
           <div className="grid grid-cols-1 gap-8 lg:grid-cols-2">
             <div className="rounded-lg bg-white p-8 shadow-three dark:bg-gray-dark">
               <h3 className="mb-4 text-xl font-bold text-black dark:text-white">
-                🚀 Parallel AI Workstreams
+                {t('capabilities.items.parallelWorkstreams.title')}
               </h3>
               <p className="mb-4 text-base leading-relaxed text-body-color dark:text-body-color-dark">
-                Run multiple Claude instances in parallel for different aspects of your project:
+                {t('capabilities.items.parallelWorkstreams.description')}
               </p>
               <ul className="list-disc pl-6 text-base text-body-color dark:text-body-color-dark">
-                <li>Frontend development in one session</li>
-                <li>Backend API design in another</li>
-                <li>Database optimization in a third</li>
-                <li>Code review and testing in parallel</li>
+                <li>{t('capabilities.items.parallelWorkstreams.bullets.item1')}</li>
+                <li>{t('capabilities.items.parallelWorkstreams.bullets.item2')}</li>
+                <li>{t('capabilities.items.parallelWorkstreams.bullets.item3')}</li>
+                <li>{t('capabilities.items.parallelWorkstreams.bullets.item4')}</li>
               </ul>
             </div>
 
             <div className="rounded-lg bg-white p-8 shadow-three dark:bg-gray-dark">
               <h3 className="mb-4 text-xl font-bold text-black dark:text-white">
-                💡 Context-Aware Sessions
+                {t('capabilities.items.contextAware.title')}
               </h3>
               <p className="mb-4 text-base leading-relaxed text-body-color dark:text-body-color-dark">
-                Each session maintains deep project context and memory:
+                {t('capabilities.items.contextAware.description')}
               </p>
               <ul className="list-disc pl-6 text-base text-body-color dark:text-body-color-dark">
-                <li>Persistent conversation history</li>
-                <li>Project-specific knowledge retention</li>
-                <li>Automatic context switching</li>
-                <li>Cross-session information sharing</li>
+                <li>{t('capabilities.items.contextAware.bullets.item1')}</li>
+                <li>{t('capabilities.items.contextAware.bullets.item2')}</li>
+                <li>{t('capabilities.items.contextAware.bullets.item3')}</li>
+                <li>{t('capabilities.items.contextAware.bullets.item4')}</li>
               </ul>
             </div>
 
             <div className="rounded-lg bg-white p-8 shadow-three dark:bg-gray-dark">
               <h3 className="mb-4 text-xl font-bold text-black dark:text-white">
-                ⚡ Lightning-Fast Interface
+                {t('capabilities.items.lightningFast.title')}
               </h3>
               <p className="mb-4 text-base leading-relaxed text-body-color dark:text-body-color-dark">
-                Optimized for speed and developer productivity:
+                {t('capabilities.items.lightningFast.description')}
               </p>
               <ul className="list-disc pl-6 text-base text-body-color dark:text-body-color-dark">
-                <li>Instant session switching with hotkeys</li>
-                <li>Real-time collaborative editing</li>
-                <li>Smart auto-completion</li>
-                <li>Minimal latency AI responses</li>
+                <li>{t('capabilities.items.lightningFast.bullets.item1')}</li>
+                <li>{t('capabilities.items.lightningFast.bullets.item2')}</li>
+                <li>{t('capabilities.items.lightningFast.bullets.item3')}</li>
+                <li>{t('capabilities.items.lightningFast.bullets.item4')}</li>
               </ul>
             </div>
 
             <div className="rounded-lg bg-white p-8 shadow-three dark:bg-gray-dark">
               <h3 className="mb-4 text-xl font-bold text-black dark:text-white">
-                🎨 Customizable Workflows
+                {t('capabilities.items.customizable.title')}
               </h3>
               <p className="mb-4 text-base leading-relaxed text-body-color dark:text-body-color-dark">
-                Tailor Kidou to your development style:
+                {t('capabilities.items.customizable.description')}
               </p>
               <ul className="list-disc pl-6 text-base text-body-color dark:text-body-color-dark">
-                <li>Custom session templates</li>
-                <li>Programmable hotkeys and shortcuts</li>
-                <li>Flexible window layouts</li>
-                <li>Integration with your favorite tools</li>
+                <li>{t('capabilities.items.customizable.bullets.item1')}</li>
+                <li>{t('capabilities.items.customizable.bullets.item2')}</li>
+                <li>{t('capabilities.items.customizable.bullets.item3')}</li>
+                <li>{t('capabilities.items.customizable.bullets.item4')}</li>
               </ul>
             </div>
           </div>
@@ -381,10 +381,10 @@ const KidouContent = () => {
                 <div className="rounded-lg bg-gradient-to-br from-primary/10 to-primary/5 p-8 text-center">
                   <div className="mb-6 text-6xl">🚀</div>
                   <h4 className="mb-4 text-xl font-bold text-black dark:text-white">
-                    Ready to Transform Your Coding Experience?
+                    {t('whyKidou.promo.title')}
                   </h4>
                   <p className="text-base text-body-color dark:text-body-color-dark">
-                    Join the revolution in AI-assisted development with Kidou&apos;s multi-session management.
+                    {t('whyKidou.promo.description')}
                   </p>
                 </div>
               </div>

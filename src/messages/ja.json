@@ -109,25 +109,91 @@
     "termsOfService": "利用規約"
   },
   "Kidou": {
-    "title": "Kidou: マルチセッションAIコーディングの解放",
-    "description": "EmbodyAIの革命的なClaude code GUIアプリKidouで、AI支援開発の未来を体験してください。複数のAIコーディングセッションを同時に管理し、並列AIアシスタントと協力し、「バイブコーディング」のフロー状態に入ります。",
+    "title": "Kidou: マルチセッション・コードエージェントマネージャー",
+    "description": "KidouはCursor AgentとClaudeに対応したマルチセッション型のコードエージェントマネージャーです。エージェントごとのコンテキストを分離しつつ並列にオーケストレーションし、開発生産性を10倍にスケールします。",
     "exploreFeatures": "機能を探索",
     "getEarlyAccess": "早期アクセスを取得",
     "downloadNow": "今すぐダウンロード",
     "downloadForMac": "macOS用ダウンロード",
     "downloadAppleSilicon": "Apple Silicon (M1/M2/M3)用ダウンロード",
     "downloadIntel": "Intel Mac用ダウンロード",
+    "downloadWindows": "Windows用ダウンロード",
+    "downloadLinux": "Linux用ダウンロード",
+    "comingSoon": "近日公開",
+    "preparingDownload": "ダウンロードを準備中...",
+    "appleSiliconNote": "M1 / M2 / M3 Mac",
+    "intelNote": "IntelベースのMac",
+    "errors": {
+      "versionLoadFailed": "バージョン情報の読み込みに失敗しました",
+      "downloadLinkFailed": "ダウンロードリンクの取得に失敗しました"
+    },
     "systemRequirements": "システム要件",
     "macosVersion": "macOS 12.0以降",
     "memory": "RAM 8GB以上、16GB推奨",
     "storage": "利用可能なディスク容量 2GB",
     "whatIsKidou": {
       "title": "Kidouとは？",
-      "description": "Kidou（起動 - 日本語で「startup」）は、複数の並行セッションでClaudeの全力を活用したい開発者向けに設計された、AI支援開発の次の進化です。"
+      "description": "Kidou（起動）は、汎用のコードエージェント・マルチセッションマネージャーへと進化中です。Cursor Agent、Claudeなど複数のエージェントを、用途別に分離したセッションで同時に管理できます。",
+      "cards": {
+        "multiSession": {
+          "title": "マルチセッション・エージェント管理",
+          "description": "Cursor、Claudeなどの複数エージェントを同時に管理。各セッションは独自のコンテキスト、メモリ、スレッドを保持します。"
+        },
+        "vibeCoding": {
+          "title": "バイブコーディング体験",
+          "description": "直感的で応答性の高いUIでフロー状態を維持。AIとの協調を途切れさせず、コード／チャット／制作に集中できます。"
+        },
+        "intelligentOrchestration": {
+          "title": "インテリジェントなオーケストレーション",
+          "description": "自動コンテキスト切替、セッション永続化、エージェント間でのスマートな負荷分散を提供します。"
+        }
+      }
     },
     "capabilities": {
       "title": "Kidouの機能",
-      "description": "現代の開発者向けに設計されたこれらの強力な機能でAI支援開発の可能性を最大限に引き出します。"
+      "description": "現代の開発者向けに設計された強力な機能で、AI支援開発の可能性を最大限に引き出します。",
+      "items": {
+        "parallelWorkstreams": {
+          "title": "🚀 並列AIワークストリーム",
+          "description": "用途別に複数のエージェントを並列実行：",
+          "bullets": {
+            "item1": "フロントエンド開発",
+            "item2": "バックエンドAPI設計",
+            "item3": "データベース最適化",
+            "item4": "コードレビューとテストの並行実行"
+          }
+        },
+        "contextAware": {
+          "title": "💡 コンテキスト認識セッション",
+          "description": "各セッションは深いプロジェクトコンテキストとメモリを保持：",
+          "bullets": {
+            "item1": "会話履歴の永続化",
+            "item2": "プロジェクト固有の知識保持",
+            "item3": "自動コンテキスト切替",
+            "item4": "セッション間の情報共有"
+          }
+        },
+        "lightningFast": {
+          "title": "⚡ 超高速インターフェース",
+          "description": "スピードと生産性に最適化：",
+          "bullets": {
+            "item1": "ホットキーで瞬時にセッション切替",
+            "item2": "リアルタイム共同編集",
+            "item3": "スマート補完",
+            "item4": "低レイテンシのAI応答"
+          }
+        },
+        "customizable": {
+          "title": "🎨 カスタマイズ可能なワークフロー",
+          "description": "あなたの開発スタイルに最適化：",
+          "bullets": {
+            "item1": "カスタムセッションテンプレート",
+            "item2": "ホットキーやショートカットの柔軟な設定",
+            "item3": "柔軟なウィンドウレイアウト",
+            "item4": "お気に入りツールとの連携"
+          }
+        }
+      }
     },
     "whyKidou": {
       "title": "開発者がKidouを選ぶ理由",
@@ -142,6 +208,10 @@
       "cognitiveReduction": {
         "title": "🧠 認知負荷の軽減",
         "description": "各AIセッションに特定の知識ドメインを処理させ、高レベルのアーキテクチャと創造的な問題解決に集中。最も重要なタスクのために脳を新鮮に保ちます。"
+      },
+      "promo": {
+        "title": "コーディング体験を変革しませんか？",
+        "description": "Kidouのマルチセッション・エージェント管理で、AI支援開発の新しい常識へ。"
       }
     },
     "cta": {

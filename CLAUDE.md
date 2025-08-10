@@ -37,7 +37,7 @@ This repository contains the **official company homepage** for EmbodyAI. The web
 - **Theme**: next-themes for dark/light mode support (essential for developer audience)
 - **Build Tool**: PNPM for package management
 - **Code Quality**: ESLint + Prettier with Tailwind plugin
-- **I18N**: next-intl
+- **I18N**: next-intl.
 
 ### Project Structure
 ```
@@ -45,7 +45,7 @@ src/
 ├── app/           # Next.js App Router pages and layouts
 ├── components/    # Reusable React components (developer-focused UI)
 ├── types/         # TypeScript type definitions
-├── messages/      # i18n messages
+├── messages/      # i18n messages including JA and EN languages
 └── styles/        # Global styles and Tailwind configuration
 
 ```

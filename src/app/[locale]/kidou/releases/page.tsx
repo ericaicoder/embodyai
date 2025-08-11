@@ -44,6 +44,25 @@ const ReleasesPage = () => {
               </p>
             </div>
 
+            {/* Download section moved to top */}
+            <div className="mb-16 text-center rounded-lg bg-gradient-to-br from-primary/5 to-primary/10 p-8">
+              <h3 className="mb-6 text-2xl font-bold text-black dark:text-white">
+                Download Kidou
+              </h3>
+              <p className="mb-8 text-lg text-body-color dark:text-body-color-dark">
+                Get the latest version of Kidou and experience multi-session AI coding.
+              </p>
+              <Link
+                href={`/${locale}/kidou`}
+                className="inline-flex items-center rounded-sm bg-primary px-8 py-4 text-base font-semibold text-white duration-300 ease-in-out hover:bg-primary/80"
+              >
+                <svg className="mr-2 h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                </svg>
+                Download Now
+              </Link>
+            </div>
+
             <div className="space-y-12">
               {versions.map((version) => {
                 const releaseData = releaseInfo[version as keyof typeof releaseInfo];
@@ -109,25 +128,6 @@ const ReleasesPage = () => {
                   </div>
                 );
               })}
-            </div>
-
-            {/* Single Download section */}
-            <div className="mt-16 text-center">
-              <h3 className="mb-6 text-2xl font-bold text-black dark:text-white">
-                Download Kidou
-              </h3>
-              <p className="mb-8 text-lg text-body-color dark:text-body-color-dark">
-                Get the latest version of Kidou and experience multi-session AI coding.
-              </p>
-              <Link
-                href={`/${locale}/kidou`}
-                className="inline-flex items-center rounded-sm bg-primary px-8 py-4 text-base font-semibold text-white duration-300 ease-in-out hover:bg-primary/80"
-              >
-                <svg className="mr-2 h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-                </svg>
-                Download Now
-              </Link>
             </div>
 
             {/* Back to Kidou link */}

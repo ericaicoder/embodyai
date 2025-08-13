@@ -108,6 +108,13 @@
     "privacyPolicy": "Privacy Policy",
     "termsOfService": "Terms of Service"
   },
+  "CompanyIntro": {
+    "title": "EmbodyAI: 10X Developer Productivity",
+    "description": "We build AI-powered tools that turn every developer into a superhuman coder and scale team output without scaling headcount.",
+    "p1": "EmbodyAI accelerates real-world software delivery with code generation, automated testing, and intelligent code review that align to your stack.",
+    "p2": "Our platform reduces cognitive load and eliminates repetitive tasks so teams focus on architecture, quality, and impact.",
+    "p3": "Founded in 2025 in Japan, our mission is simple: scale every developer to 10X productivity through practical, developer-first AI."
+  },
   "Kidou": {
     "title": "Kidou: Multi-Session Code Agent Manager",
     "description": "Kidou is a multi-session code agent manager that supports Cursor Agent and Claude. Orchestrate multiple agent sessions in parallel with isolated context, and scale developer productivity to 10X.",

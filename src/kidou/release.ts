@@ -24,6 +24,19 @@ const note_0_0_20 = `
 - Support set a session name when creating a new session
 `;
 
+const note_0_0_21 = `
+Added:
+- Support view git diff by file
+- Full screen mode for Changes tab
+
+Fixed:
+- Fixed a bug that the terminal is not working when the session is not active
+- Bad performance when making a big change
+
+Development:
+- Kidou cloud is in development
+`;
+
 export const releaseInfo = {
     "0.0.17": {
         "releaseDate": "2025-08-07",
@@ -43,6 +56,11 @@ export const releaseInfo = {
     "0.0.20": {
         "releaseDate": "2025-08-11",
         "releaseNotes": note_0_0_20,
+        "releaseUrl": "https://embodyai.co.jp/kidou/releases",
+    },
+    "0.0.21": {
+        "releaseDate": "2025-08-13",
+        "releaseNotes": note_0_0_21,
         "releaseUrl": "https://embodyai.co.jp/kidou/releases",
     },
 }

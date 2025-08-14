@@ -12,7 +12,7 @@ const Pricing = () => {
       <div className="container">
         <SectionTitle
           title="Simple and Affordable Pricing"
-          paragraph="There are many variations of passages of Lorem Ipsum available but the majority have suffered alteration in some form."
+          paragraph="We offer a range of pricing options to suit your needs. Our pricing is based on the number of users and the features you need. We offer a free trial for all our products."
           center
           width="665px"
         />

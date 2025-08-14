@@ -83,6 +83,7 @@
   "Contact": {
     "title": "Ready to Scale Your Development to 10X?",
     "description": "Get in touch with our team to learn how EmbodyAI can accelerate your development workflow and amplify your productivity.",
+    "directEmail": "Or email us directly:",
     "form": {
       "name": "Your Name",
       "email": "Your Email",

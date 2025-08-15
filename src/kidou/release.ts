@@ -37,6 +37,18 @@ Development:
 - Kidou cloud is in development
 `;
 
+const note_0_0_22 = `
+Added:
+- Supports to scroll horizontally when view diffs
+
+Fixed:
+- Fixed a bug that show wrong commit message when rebase to main
+- Performance improvements
+
+Development:
+- Kidou cloud is in development
+`;
+
 export const releaseInfo = {
     "0.0.17": {
         "releaseDate": "2025-08-07",
@@ -61,6 +73,11 @@ export const releaseInfo = {
     "0.0.21": {
         "releaseDate": "2025-08-13",
         "releaseNotes": note_0_0_21,
+        "releaseUrl": "https://embodyai.co.jp/kidou/releases",
+    },
+    "0.0.22": {
+        "releaseDate": "2025-08-15",
+        "releaseNotes": note_0_0_22,
         "releaseUrl": "https://embodyai.co.jp/kidou/releases",
     },
 }

@@ -14,10 +14,27 @@ Development:
 - Better diff view
 `;
 
+const note_0_0_24 = `
+Added:
+- Direct session is now available. In direct session, the code agent will make changes directly to the codebase.
+- Support collapse/expand unchanged lines in the Changes tab
+
+Fixed:
+- Project list ui
+
+Development:
+- Better diff view
+`;
+
 export const releaseInfo = {
     "0.0.23": {
         "releaseDate": "2025-08-27",
         "releaseNotes": note_0_0_23,
+        "releaseUrl": "https://embodyai.co.jp/kidou/releases",
+    },
+    "0.0.24": {
+        "releaseDate": "2025-08-29",
+        "releaseNotes": note_0_0_24,
         "releaseUrl": "https://embodyai.co.jp/kidou/releases",
     },
 }

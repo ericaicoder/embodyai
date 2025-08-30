@@ -118,7 +118,7 @@
   },
   "Kidou": {
     "title": "Kidou: Multi-Session Code Agent Manager",
-    "description": "Kidou is a multi-session code agent manager that supports Cursor Agent and Claude. Orchestrate multiple agent sessions in parallel with isolated context, and scale developer productivity to 10X.",
+    "description": "Kidou is a multi-session code agent manager that supports Claude Code, Cursor Agent, and Codex. Orchestrate multiple agent sessions in parallel with isolated context, and scale developer productivity to 10X.",
     "exploreFeatures": "Explore Features",
     "getEarlyAccess": "Get Early Access",
     "downloadNow": "Download Now",
@@ -141,11 +141,11 @@
     "storage": "2GB available disk space",
     "whatIsKidou": {
       "title": "What is Kidou?",
-      "description": "Kidou (起動 - \"startup\" in Japanese) is evolving into a general code agent multi-session manager. Manage Cursor Agent, Claude, and other agents across concurrent, isolated sessions for specialized tasks.",
+      "description": "Kidou (起動 - \"startup\" in Japanese) is evolving into a general code agent multi-session manager. Manage Claude Code, Cursor Agent, Codex, and other agents across concurrent, isolated sessions for specialized tasks.",
       "cards": {
         "multiSession": {
           "title": "Multi-Session Agent Management",
-          "description": "Open and manage multiple agent sessions (Cursor, Claude, and more) simultaneously. Each session maintains its own context, memory, and conversation thread."
+          "description": "Open and manage multiple agent sessions (Claude Code, Cursor Agent, Codex, and more) simultaneously. Each session maintains its own context, memory, and conversation thread."
         },
         "vibeCoding": {
           "title": "Vibe Coding Experience",
@@ -155,6 +155,22 @@
           "title": "Intelligent Session Orchestration",
           "description": "Automatic context switching, session persistence, and intelligent workload distribution across your AI agents."
         }
+      }
+    },
+    "supportedAgents": {
+      "title": "Supported Code Agents",
+      "description": "Kidou seamlessly integrates with the industry's leading AI code agents, giving you the flexibility to choose the right tool for each task.",
+      "claudeCode": {
+        "title": "Claude Code",
+        "description": "Anthropic's advanced coding assistant with deep understanding of code context and exceptional reasoning capabilities for complex development tasks."
+      },
+      "cursorAgent": {
+        "title": "Cursor Agent",
+        "description": "The intelligent coding companion that understands your entire codebase, providing context-aware suggestions and automated code generation."
+      },
+      "codex": {
+        "title": "Codex",
+        "description": "OpenAI's powerful code generation model that excels at understanding natural language instructions and translating them into working code."
       }
     },
     "capabilities": {

@@ -118,7 +118,7 @@
   },
   "Kidou": {
     "title": "Kidou: マルチセッション・コードエージェントマネージャー",
-    "description": "KidouはCursor AgentとClaudeに対応したマルチセッション型のコードエージェントマネージャーです。エージェントごとのコンテキストを分離しつつ並列にオーケストレーションし、開発生産性を10倍にスケールします。",
+    "description": "KidouはClaude Code、Cursor Agent、Codexに対応したマルチセッション型のコードエージェントマネージャーです。エージェントごとのコンテキストを分離しつつ並列にオーケストレーションし、開発生産性を10倍にスケールします。",
     "exploreFeatures": "機能を探索",
     "getEarlyAccess": "早期アクセスを取得",
     "downloadNow": "今すぐダウンロード",
@@ -141,11 +141,11 @@
     "storage": "利用可能なディスク容量 2GB",
     "whatIsKidou": {
       "title": "Kidouとは？",
-      "description": "Kidou（起動）は、汎用のコードエージェント・マルチセッションマネージャーへと進化中です。Cursor Agent、Claudeなど複数のエージェントを、用途別に分離したセッションで同時に管理できます。",
+      "description": "Kidou（起動）は、汎用のコードエージェント・マルチセッションマネージャーへと進化中です。Claude Code、Cursor Agent、Codexなど複数のエージェントを、用途別に分離したセッションで同時に管理できます。",
       "cards": {
         "multiSession": {
           "title": "マルチセッション・エージェント管理",
-          "description": "Cursor、Claudeなどの複数エージェントを同時に管理。各セッションは独自のコンテキスト、メモリ、スレッドを保持します。"
+          "description": "Claude Code、Cursor Agent、Codexなどの複数エージェントを同時に管理。各セッションは独自のコンテキスト、メモリ、スレッドを保持します。"
         },
         "vibeCoding": {
           "title": "バイブコーディング体験",
@@ -155,6 +155,22 @@
           "title": "インテリジェントなオーケストレーション",
           "description": "自動コンテキスト切替、セッション永続化、エージェント間でのスマートな負荷分散を提供します。"
         }
+      }
+    },
+    "supportedAgents": {
+      "title": "対応コードエージェント",
+      "description": "Kidouは業界をリードするAIコードエージェントとシームレスに統合し、各タスクに最適なツールを選択する柔軟性を提供します。",
+      "claudeCode": {
+        "title": "Claude Code",
+        "description": "Anthropicの高度なコーディングアシスタント。コードコンテキストの深い理解と、複雑な開発タスクに対する優れた推論能力を備えています。"
+      },
+      "cursorAgent": {
+        "title": "Cursor Agent",
+        "description": "コードベース全体を理解するインテリジェントなコーディングパートナー。コンテキストを意識した提案と自動コード生成を提供します。"
+      },
+      "codex": {
+        "title": "Codex",
+        "description": "OpenAIの強力なコード生成モデル。自然言語の指示を理解し、動作するコードに変換することに優れています。"
       }
     },
     "capabilities": {

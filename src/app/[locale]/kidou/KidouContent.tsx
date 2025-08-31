@@ -197,6 +197,56 @@ const KidouContent = () => {
                   {t('exploreFeatures')}
                 </a>
               </div>
+
+              {/* Supported Agents */}
+              <div className="mt-12">
+                <h3 className="mb-6 text-center text-xl font-semibold text-black dark:text-white">
+                  {t('supportedAgents.title')}
+                </h3>
+                <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
+                  <div className="flex flex-col items-center text-center">
+                    <div className="mb-3 h-10 w-10 rounded-lg bg-primary/10 flex items-center justify-center">
+                      <svg className="h-5 w-5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                      </svg>
+                    </div>
+                    <h4 className="mb-2 text-sm font-semibold text-black dark:text-white">
+                      {t('supportedAgents.claudeCode.title')}
+                    </h4>
+                    <p className="text-xs text-body-color dark:text-body-color-dark">
+                      {t('supportedAgents.claudeCode.description')}
+                    </p>
+                  </div>
+
+                  <div className="flex flex-col items-center text-center">
+                    <div className="mb-3 h-10 w-10 rounded-lg bg-primary/10 flex items-center justify-center">
+                      <svg className="h-5 w-5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+                      </svg>
+                    </div>
+                    <h4 className="mb-2 text-sm font-semibold text-black dark:text-white">
+                      {t('supportedAgents.cursorAgent.title')}
+                    </h4>
+                    <p className="text-xs text-body-color dark:text-body-color-dark">
+                      {t('supportedAgents.cursorAgent.description')}
+                    </p>
+                  </div>
+
+                  <div className="flex flex-col items-center text-center">
+                    <div className="mb-3 h-10 w-10 rounded-lg bg-primary/10 flex items-center justify-center">
+                      <svg className="h-5 w-5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                      </svg>
+                    </div>
+                    <h4 className="mb-2 text-sm font-semibold text-black dark:text-white">
+                      {t('supportedAgents.codex.title')}
+                    </h4>
+                    <p className="text-xs text-body-color dark:text-body-color-dark">
+                      {t('supportedAgents.codex.description')}
+                    </p>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -254,64 +304,6 @@ const KidouContent = () => {
               </h3>
               <p className="text-base leading-relaxed text-body-color dark:text-body-color-dark">
                 {t('whatIsKidou.cards.intelligentOrchestration.description')}
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Supported Agents Section */}
-      <section className="py-16 md:py-20 lg:py-28">
-        <div className="container">
-          <div className="mx-auto mb-12 max-w-[510px] text-center lg:mb-16">
-            <h2 className="mb-4 text-3xl font-bold leading-tight text-black dark:text-white sm:text-4xl sm:leading-tight">
-              {t('supportedAgents.title')}
-            </h2>
-            <p className="text-base leading-relaxed text-body-color dark:text-body-color-dark">
-              {t('supportedAgents.description')}
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
-            <div className="rounded-lg bg-white p-8 shadow-three dark:bg-gray-dark">
-              <div className="mb-6 h-12 w-12 rounded-lg bg-primary/10 flex items-center justify-center">
-                <svg className="h-6 w-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                </svg>
-              </div>
-              <h3 className="mb-4 text-xl font-bold text-black dark:text-white">
-                {t('supportedAgents.claudeCode.title')}
-              </h3>
-              <p className="text-base leading-relaxed text-body-color dark:text-body-color-dark">
-                {t('supportedAgents.claudeCode.description')}
-              </p>
-            </div>
-
-            <div className="rounded-lg bg-white p-8 shadow-three dark:bg-gray-dark">
-              <div className="mb-6 h-12 w-12 rounded-lg bg-primary/10 flex items-center justify-center">
-                <svg className="h-6 w-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
-                </svg>
-              </div>
-              <h3 className="mb-4 text-xl font-bold text-black dark:text-white">
-                {t('supportedAgents.cursorAgent.title')}
-              </h3>
-              <p className="text-base leading-relaxed text-body-color dark:text-body-color-dark">
-                {t('supportedAgents.cursorAgent.description')}
-              </p>
-            </div>
-
-            <div className="rounded-lg bg-white p-8 shadow-three dark:bg-gray-dark">
-              <div className="mb-6 h-12 w-12 rounded-lg bg-primary/10 flex items-center justify-center">
-                <svg className="h-6 w-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                </svg>
-              </div>
-              <h3 className="mb-4 text-xl font-bold text-black dark:text-white">
-                {t('supportedAgents.codex.title')}
-              </h3>
-              <p className="text-base leading-relaxed text-body-color dark:text-body-color-dark">
-                {t('supportedAgents.codex.description')}
               </p>
             </div>
           </div>

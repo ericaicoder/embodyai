@@ -159,18 +159,17 @@
     },
     "supportedAgents": {
       "title": "Supported Code Agents",
-      "description": "Kidou seamlessly integrates with the industry's leading AI code agents, giving you the flexibility to choose the right tool for each task.",
       "claudeCode": {
         "title": "Claude Code",
-        "description": "Anthropic's advanced coding assistant with deep understanding of code context and exceptional reasoning capabilities for complex development tasks."
+        "description": "Advanced coding assistant with deep code context understanding and exceptional reasoning capabilities."
       },
       "cursorAgent": {
         "title": "Cursor Agent",
-        "description": "The intelligent coding companion that understands your entire codebase, providing context-aware suggestions and automated code generation."
+        "description": "Intelligent coding companion that understands your entire codebase and provides context-aware suggestions."
       },
       "codex": {
         "title": "Codex",
-        "description": "OpenAI's powerful code generation model that excels at understanding natural language instructions and translating them into working code."
+        "description": "Powerful code generation model that excels at translating natural language into working code."
       }
     },
     "capabilities": {

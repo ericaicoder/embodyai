@@ -31,6 +31,15 @@ Added:
 - Support OpenAI Codex
 `;
 
+const note_0_0_26 = `
+Added:
+- Support Cursor Agent
+- Support add/edit/remove provider models
+- Support set default provider model
+Fixed:
+- UI performance improvement
+`;
+
 export const releaseInfo = {
     "0.0.23": {
         "releaseDate": "2025-08-27",
@@ -45,6 +54,11 @@ export const releaseInfo = {
     "0.0.25": {
         "releaseDate": "2025-08-30",
         "releaseNotes": note_0_0_25,
+        "releaseUrl": "https://embodyai.co.jp/kidou/releases",
+    },
+    "0.0.26": {
+        "releaseDate": "2025-09-04",
+        "releaseNotes": note_0_0_26,
         "releaseUrl": "https://embodyai.co.jp/kidou/releases",
     },
 }

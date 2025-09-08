@@ -40,6 +40,16 @@ Fixed:
 - UI performance improvement
 `;
 
+const note_0_0_27 = `
+Added:
+- Support auto commit for session
+- Support ultrathink
+
+Fixed:
+- Fixed cursor-agent bug
+- Improved code review pane performance
+`;
+
 export const releaseInfo = {
     "0.0.23": {
         "releaseDate": "2025-08-27",
@@ -59,6 +69,11 @@ export const releaseInfo = {
     "0.0.26": {
         "releaseDate": "2025-09-04",
         "releaseNotes": note_0_0_26,
+        "releaseUrl": "https://embodyai.co.jp/kidou/releases",
+    },
+    "0.0.27": {
+        "releaseDate": "2025-01-15",
+        "releaseNotes": note_0_0_27,
         "releaseUrl": "https://embodyai.co.jp/kidou/releases",
     },
 }

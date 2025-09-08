@@ -57,9 +57,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   routes.forEach((route) => {
     locales.forEach((locale) => {
-      const url = locale === 'en' 
-        ? `${baseUrl}${route.path}` 
-        : `${baseUrl}/${locale}${route.path}`;
+      // All locales now have their own path: /en, /ja
+      const url = `${baseUrl}/${locale}${route.path}`;
       
       sitemapEntries.push({
         url,
@@ -68,9 +67,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
         priority: route.priority,
         alternates: {
           languages: locales.reduce((acc, altLocale) => {
-            const altUrl = altLocale === 'en' 
-              ? `${baseUrl}${route.path}` 
-              : `${baseUrl}/${altLocale}${route.path}`;
+            const altUrl = `${baseUrl}/${altLocale}${route.path}`;
             acc[altLocale] = altUrl;
             return acc;
           }, {} as Record<string, string>),

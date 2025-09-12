@@ -50,6 +50,13 @@ Fixed:
 - Improved code review pane performance
 `;
 
+const note_0_0_28 = `
+Added:
+- Support file search in file editor tab
+- The input supports drag image into the input area
+- Improved diff panel performance
+`;
+
 export const releaseInfo = {
     "0.0.23": {
         "releaseDate": "2025-08-27",
@@ -72,8 +79,13 @@ export const releaseInfo = {
         "releaseUrl": "https://embodyai.co.jp/kidou/releases",
     },
     "0.0.27": {
-        "releaseDate": "2025-01-15",
+        "releaseDate": "2025-09-09",
         "releaseNotes": note_0_0_27,
+        "releaseUrl": "https://embodyai.co.jp/kidou/releases",
+    },
+    "0.0.28": {
+        "releaseDate": "2025-09-12",
+        "releaseNotes": note_0_0_28,
         "releaseUrl": "https://embodyai.co.jp/kidou/releases",
     },
 }

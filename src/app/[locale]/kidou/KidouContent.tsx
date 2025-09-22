@@ -252,6 +252,33 @@ const KidouContent = () => {
         </div>
       </section>
 
+      {/* Demo Video Section */}
+      <section className="py-16 md:py-20 lg:py-28">
+        <div className="container">
+          <div className="mx-auto mb-12 max-w-[800px] text-center lg:mb-16">
+            <h2 className="mb-4 text-3xl font-bold leading-tight text-black dark:text-white sm:text-4xl sm:leading-tight">
+              {t('demoVideo.title')}
+            </h2>
+            <p className="text-base leading-relaxed text-body-color dark:text-body-color-dark">
+              {t('demoVideo.description')}
+            </p>
+          </div>
+          
+          <div className="mx-auto max-w-4xl">
+            <div className="relative aspect-video rounded-lg overflow-hidden shadow-lg">
+              <iframe
+                src="https://www.youtube.com/embed/HjnNLMVhL_c"
+                title="Kidou Demo Video"
+                className="absolute inset-0 w-full h-full"
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* What is Kidou Section */}
       <section className="py-16 md:py-20 lg:py-28">
         <div className="container">

@@ -237,6 +237,10 @@
         "description": "Join the revolution in AI-assisted development with Kidou's multi-session agent management."
       }
     },
+    "demoVideo": {
+      "title": "See Kidou in Action",
+      "description": "Watch how Kidou transforms your development workflow with multi-session AI agent management and parallel coding capabilities."
+    },
     "cta": {
       "title": "Ready to Experience Kidou?",
       "description": "Join the early access program and be among the first developers to experience the future of multi-session AI coding with Kidou.",

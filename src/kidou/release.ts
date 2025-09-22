@@ -57,6 +57,14 @@ Added:
 - Improved diff panel performance
 `;
 
+const note_0_0_29 = `
+Added:
+- Support login to kidou cloud
+Fixed:
+- Cursor-agent's process doesn't exit when the session is finished
+- Changes diff view not show correctly when the file path has a space
+`;
+
 export const releaseInfo = {
     "0.0.23": {
         "releaseDate": "2025-08-27",
@@ -86,6 +94,11 @@ export const releaseInfo = {
     "0.0.28": {
         "releaseDate": "2025-09-12",
         "releaseNotes": note_0_0_28,
+        "releaseUrl": "https://embodyai.co.jp/kidou/releases",
+    },
+    "0.0.29": {
+        "releaseDate": "2025-09-22",
+        "releaseNotes": note_0_0_29,
         "releaseUrl": "https://embodyai.co.jp/kidou/releases",
     },
 }

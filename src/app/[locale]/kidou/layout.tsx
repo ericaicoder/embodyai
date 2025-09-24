@@ -3,12 +3,12 @@ import { Locale } from "@/i18n/config";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Kidou - Multi-Session Code Agent Manager | EmbodyAI",
-  description: "Kidou is EmbodyAI's multi-session code agent manager that supports Cursor Agent and Claude. Orchestrate multiple AI coding sessions in parallel, keep context isolated, and scale your productivity to 10X.",
-  keywords: "Kidou, Cursor Agent, Claude, code agent, multi-session, AI coding, agent orchestration, developer productivity, parallel AI sessions, AI code management",
+  title: "Kidou - GUI for AI Code Agents | EmbodyAI",
+  description: "Kidou is EmbodyAI's fast, unified desktop GUI for popular AI code agents like Claude Code, Cursor Agent, and Codex. Launch, switch, and control agents from one place with a native, developer-first interface.",
+  keywords: "Kidou, Cursor Agent, Claude Code, Codex, code agent GUI, AI coding, developer tools, IDE-like UX, agent launcher, unified interface",
   openGraph: {
-    title: "Kidou - Multi-Session Code Agent Manager | EmbodyAI",
-    description: "Manage multiple code agents (Cursor, Claude, and more) in parallel. Orchestrate AI coding sessions with isolated context and 10X developer productivity.",
+    title: "Kidou - GUI for AI Code Agents | EmbodyAI",
+    description: "Unified desktop GUI for Claude Code, Cursor Agent, Codex, and more. Launch, switch, and control agents from a single, developer-first interface.",
     url: "https://embodyai.co.jp/kidou",
     siteName: "EmbodyAI",
     type: "website",
@@ -23,8 +23,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Kidou - Multi-Session Code Agent Manager | EmbodyAI",
-    description: "Orchestrate multiple code agents (Cursor, Claude, etc.) across parallel sessions for 10X developer productivity.",
+    title: "Kidou - GUI for AI Code Agents | EmbodyAI",
+    description: "Unified GUI for Claude Code, Cursor Agent, and Codex. Launch and control agents from one place with a native, developer-first interface.",
     images: [
       {
         url: "/images/og-image.png",

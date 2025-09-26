@@ -65,6 +65,15 @@ Fixed:
 - Changes diff view not show correctly when the file path has a space
 `;
 
+const note_0_0_30 = `
+Improvements:
+- New model selector
+- Improved Codex Executor performance
+- Set Direct Session as default
+Fixed:
+- Fix Codex session id issue
+`;
+
 export const releaseInfo = {
     "0.0.23": {
         "releaseDate": "2025-08-27",
@@ -99,6 +108,11 @@ export const releaseInfo = {
     "0.0.29": {
         "releaseDate": "2025-09-22",
         "releaseNotes": note_0_0_29,
+        "releaseUrl": "https://embodyai.co.jp/kidou/releases",
+    },
+    "0.0.30": {
+        "releaseDate": "2025-09-26",
+        "releaseNotes": note_0_0_30,
         "releaseUrl": "https://embodyai.co.jp/kidou/releases",
     },
 }

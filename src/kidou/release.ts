@@ -74,6 +74,13 @@ Fixed:
 - Fix Codex session id issue
 `;
 
+const note_0_0_31 = `
+Improvements:
+- Support Sonnet 4.5
+Fixed:
+- Fixed some UI bugs
+`;
+
 export const releaseInfo = {
     "0.0.23": {
         "releaseDate": "2025-08-27",

@@ -76,9 +76,17 @@ Fixed:
 
 const note_0_0_31 = `
 Improvements:
-- Support Sonnet 4.5
+ - Support Sonnet 4.5
 Fixed:
-- Fixed some UI bugs
+ - Fixed some UI bugs
+`;
+
+const note_0_0_32 = `
+Improvements:
+ - New model selector UI
+ - Perfomance improvements with Codex
+Fixed:
+ - Fixed Codex resume issue
 `;
 
 export const releaseInfo = {
@@ -125,6 +133,11 @@ export const releaseInfo = {
     "0.0.31": {
         "releaseDate": "2025-09-30",
         "releaseNotes": note_0_0_31,
+        "releaseUrl": "https://embodyai.co.jp/kidou/releases",
+    },
+    "0.0.32": {
+        "releaseDate": "2025-10-13",
+        "releaseNotes": note_0_0_32,
         "releaseUrl": "https://embodyai.co.jp/kidou/releases",
     },
 }

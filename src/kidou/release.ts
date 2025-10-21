@@ -89,6 +89,16 @@ Fixed:
  - Fixed Codex resume issue
 `;
 
+const note_0_0_33 = `
+Added:
+- Global search for files in the project
+- Cross-project file references in the input
+- Fuzzy file search in the input
+
+Fixed:
+- Codex session finished with error at some cases
+`;
+
 export const releaseInfo = {
     "0.0.23": {
         "releaseDate": "2025-08-27",
@@ -138,6 +148,11 @@ export const releaseInfo = {
     "0.0.32": {
         "releaseDate": "2025-10-13",
         "releaseNotes": note_0_0_32,
+        "releaseUrl": "https://embodyai.co.jp/kidou/releases",
+    },
+    "0.0.33": {
+        "releaseDate": "2025-10-21",
+        "releaseNotes": note_0_0_33,
         "releaseUrl": "https://embodyai.co.jp/kidou/releases",
     },
 }

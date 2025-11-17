@@ -99,6 +99,14 @@ Fixed:
 - Codex session finished with error at some cases
 `;
 
+const note_0_0_34 = `
+Improvements:
+ - Better error handling for file operations
+ - Add gpt-5.1 and gpt-5.1-codex models for Codex cli
+Fixed:
+ - Fixed issue with new version output of codex cli 
+`;
+
 export const releaseInfo = {
     "0.0.23": {
         "releaseDate": "2025-08-27",
@@ -153,6 +161,11 @@ export const releaseInfo = {
     "0.0.33": {
         "releaseDate": "2025-10-21",
         "releaseNotes": note_0_0_33,
+        "releaseUrl": "https://embodyai.co.jp/kidou/releases",
+    },
+    "0.0.34": {
+        "releaseDate": "2025-11-17",
+        "releaseNotes": note_0_0_34,
         "releaseUrl": "https://embodyai.co.jp/kidou/releases",
     },
 }

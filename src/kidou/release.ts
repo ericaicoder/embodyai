@@ -107,6 +107,14 @@ Fixed:
  - Fixed issue with new version output of codex cli 
 `;
 
+const note_0_0_35 = `
+Improvements:
+ - Support Gemini cli and Gemini 3 Pro model
+ - Enhanced user interface for model selection
+Fixed:
+ - Resolved minor bugs and improved stability
+`;
+
 export const releaseInfo = {
     "0.0.23": {
         "releaseDate": "2025-08-27",
@@ -166,6 +174,11 @@ export const releaseInfo = {
     "0.0.34": {
         "releaseDate": "2025-11-17",
         "releaseNotes": note_0_0_34,
+        "releaseUrl": "https://embodyai.co.jp/kidou/releases",
+    },
+    "0.0.35": {
+        "releaseDate": "2025-12-02",
+        "releaseNotes": note_0_0_35,
         "releaseUrl": "https://embodyai.co.jp/kidou/releases",
     },
 }

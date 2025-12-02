@@ -118,7 +118,7 @@
   },
   "Kidou": {
     "title": "Kidou: AIコードエージェント用GUI",
-    "description": "KidouはClaude Code、Cursor Agent、Codexなどの人気AIコードエージェントを一元管理できる高速なデスクトップGUIです。開発者に最適化されたネイティブ感のあるインターフェースで、起動・切替・操作をひとつの場所から行えます。",
+    "description": "KidouはClaude Code、Cursor Agent、Gemini Code Agent、Codexなどの人気AIコードエージェントを一元管理できる高速なデスクトップGUIです。開発者に最適化されたネイティブ感のあるインターフェースで、起動・切替・操作をひとつの場所から行えます。",
     "exploreFeatures": "機能を探索",
     "getEarlyAccess": "早期アクセスを取得",
     "downloadNow": "今すぐダウンロード",
@@ -141,7 +141,7 @@
     "storage": "利用可能なディスク容量 2GB",
     "whatIsKidou": {
       "title": "Kidouとは？",
-      "description": "Kidou（起動）は、AIコードエージェントのための統合デスクトップGUIです。Claude Code、Cursor Agent、Codexなどを、開発者向けに最適化された高速なネイティブUIで一箇所から操作できます。",
+      "description": "Kidou（起動）は、AIコードエージェントのための統合デスクトップGUIです。Claude Code、Cursor Agent、Gemini Code Agent、Codexなどを、開発者向けに最適化された高速なネイティブUIで一箇所から操作できます。",
       "cards": {
         "multiSession": {
           "title": "統合エージェントランチャー",
@@ -167,6 +167,10 @@
         "title": "Cursor Agent",
         "description": "コードベース全体を理解し、コンテキストを意識した提案を提供するインテリジェントなコーディングパートナー。"
       },
+      "gemini": {
+        "title": "Gemini Code Agent",
+        "description": "Google Geminiを活用したコーディングエージェント。推論力とコード生成、ツール連携に強み。"
+      },
       "codex": {
         "title": "Codex",
         "description": "自然言語を動作するコードに変換することに優れた強力なコード生成モデル。"
@@ -180,7 +184,7 @@
           "title": "🚀 統合エージェントGUI",
           "description": "単一の一貫したUIでエージェントをスムーズに扱う：",
           "bullets": {
-            "item1": "Claude Code / Cursor / Codexを素早く切替",
+            "item1": "Claude Code / Cursor / Gemini / Codexを素早く切替",
             "item2": "会話とコードを並べて確認",
             "item3": "リンクやファイルを文脈のまま開く",
             "item4": "フローを崩さないインライン操作"
@@ -239,7 +243,7 @@
     },
     "demoVideo": {
       "title": "Kidouの実演を見る",
-      "description": "統合GUIにより、Claude Code / Cursor / Codexとの連携がどのようにシンプルになるかをご覧ください。"
+      "description": "統合GUIにより、Claude Code / Cursor / Gemini / Codexとの連携がどのようにシンプルになるかをご覧ください。"
     },
     "cta": {
       "title": "Kidouを体験する準備はできましたか？",

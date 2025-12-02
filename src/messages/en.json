@@ -118,7 +118,7 @@
   },
   "Kidou": {
     "title": "Kidou: GUI for AI Code Agents",
-    "description": "Kidou is a fast, unified desktop GUI for popular AI code agents like Claude Code, Cursor Agent, and Codex. Launch, switch, and control agents from one place with a native, developer-first interface.",
+    "description": "Kidou is a fast, unified desktop GUI for popular AI code agents like Claude Code, Cursor Agent, Gemini Code Agent, and Codex. Launch, switch, and control agents from one place with a native, developer-first interface.",
     "exploreFeatures": "Explore Features",
     "getEarlyAccess": "Get Early Access",
     "downloadNow": "Download Now",
@@ -141,7 +141,7 @@
     "storage": "2GB available disk space",
     "whatIsKidou": {
       "title": "What is Kidou?",
-      "description": "Kidou (起動 - \"startup\" in Japanese) is a unified desktop GUI for AI code agents. Control Claude Code, Cursor Agent, Codex, and more from one place with a fast, native interface built for developers.",
+      "description": "Kidou (起動 - \"startup\" in Japanese) is a unified desktop GUI for AI code agents. Control Claude Code, Cursor Agent, Gemini Code Agent, Codex, and more from one place with a fast, native interface built for developers.",
       "cards": {
         "multiSession": {
           "title": "Unified Agent Launcher",
@@ -167,6 +167,10 @@
         "title": "Cursor Agent",
         "description": "Intelligent coding companion that understands your entire codebase and provides context-aware suggestions."
       },
+      "gemini": {
+        "title": "Gemini Code Agent",
+        "description": "Google Gemini–powered coding agent with strong reasoning, code generation, and tool integration."
+      },
       "codex": {
         "title": "Codex",
         "description": "Powerful code generation model that excels at translating natural language into working code."
@@ -180,7 +184,7 @@
           "title": "🚀 Unified Agent GUI",
           "description": "Work fluidly across agents from a single, cohesive UI:",
           "bullets": {
-            "item1": "Switch between Claude Code, Cursor Agent, and Codex",
+            "item1": "Switch between Claude Code, Cursor Agent, Gemini, and Codex",
             "item2": "Keep conversations and code side-by-side",
             "item3": "Open links and files in context",
             "item4": "Trigger actions without leaving your flow"
@@ -239,7 +243,7 @@
     },
     "demoVideo": {
       "title": "See Kidou in Action",
-      "description": "Watch how Kidou streamlines your workflow with a unified GUI for Claude Code, Cursor Agent, and Codex."
+      "description": "Watch how Kidou streamlines your workflow with a unified GUI for Claude Code, Cursor Agent, Gemini Code Agent, and Codex."
     },
     "cta": {
       "title": "Ready to Experience Kidou?",

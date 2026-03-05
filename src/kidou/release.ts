@@ -115,6 +115,14 @@ Fixed:
  - Resolved minor bugs and improved stability
 `;
 
+const note_0_0_37 = `
+Added:
+- Support the latest model in Codex CLI
+
+Fixed:
+- Fixed minor bugs and improved overall stability
+`;
+
 export const releaseInfo = {
     "0.0.23": {
         "releaseDate": "2025-08-27",
@@ -179,6 +187,11 @@ export const releaseInfo = {
     "0.0.35": {
         "releaseDate": "2025-12-02",
         "releaseNotes": note_0_0_35,
+        "releaseUrl": "https://embodyai.co.jp/kidou/releases",
+    },
+    "0.0.37": {
+        "releaseDate": "2025-12-15",
+        "releaseNotes": note_0_0_37,
         "releaseUrl": "https://embodyai.co.jp/kidou/releases",
     },
 }
